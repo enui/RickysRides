@@ -1,2 +1,1 @@
-# RickysRides
-3.7 Assessment "Ricky's Rides"
+3.7 Ricky's Rides
