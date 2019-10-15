@@ -13,6 +13,7 @@
 function costs(form) {
     var totalCost = 0;
     var BOOKINGFEE = 50;
+    totalCost.innerHTML = totalCost;
     // TODO: Calculate days using 2 dates
     // Calculating vehicle selected
     for (var i = 0; i < form.elements.length; i++){
