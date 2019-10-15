@@ -76,9 +76,18 @@
                     <img src="images\nissan_tiida.jpg">
                     <p>Bad</p>
                 </div>
+            
+            
+                <label><input name="vehicle" type="radio" data-price="18" value="Nissan Tiida">Nissan Tiida</label>
+                <label><input name="vehicle" type="radio" data-price="18" value="Suzuki Swift">Suzuki Swift</label>
+                <label><input name="vehicle" type="radio" data-price="23" value="Mazda 3">Mazda 3</label>
+                <label><input name="vehicle" type="radio" data-price="41" value="Holden Trax">Holden Trax</label>
+                <label><input name="vehicle" type="radio" data-price="52" value="Holden Captiva">Holden Captiva</label>
+                <label><input name="vehicle" type="radio" data-price="62" value="Toyota Estima">Toyota Estima</label>
+                <label><input name="vehicle" type="radio" data-price="89" value="Nissan Leaf">Nissan Leaf</label>
             </form>
             <br>
-            <button class="next">Next</button>
+            <button class="next" onclick="costs(document.thisForm)">Next</button>
         </div>
         
         <br><br>
@@ -101,11 +110,11 @@
         <div class="section" id="extras">
             <h2>Extras:</h2><br>
             <form>
-                <input type="checkbox"><label>Snow Chains - $60</label><br>
-                <input type="checkbox"><label>Roof Racks - $90</label><br>
-                <input type="checkbox"><label>Bike Rack - $120 (Fits max 3 bikes)</label><br>
-                <input type="checkbox"><label>GPS - $35</label><br>
-                <input type="checkbox"><label>Child Booster Seat - $50 (9kg - 36kg</label>
+                <label><input type="checkbox" data-price="60" value="snowChains">Snow Chains - $60</label><br>
+                <label><input type="checkbox" data-price="90" value="roofRacks">Roof Racks - $90</label><br>
+                <label><input type="checkbox" data-price="120" value="bikeRack">Bike Rack - $120 (Fits max 3 bikes)</label><br>
+                <label><input type="checkbox" data-price="35" value="gps">GPS - $35</label><br>
+                <label><input type="checkbox" data-price="50" value="booster">Child Booster Seat - $50 (9kg - 36kg</label>
             </form>
             <br>
             <button class="next">Next</button>
@@ -117,23 +126,29 @@
         <div class="section" id="details">
             <h2>Details:</h2><br>
             <form>
-                <label>Name: </label><input type="text" pattern="" required><br><br>
-                <label>Email: </label><input type="email" pattern="" required><br><br>
-                <label>Cellphone: </label><input type="tel" pattern="" required><br><br>
-                <label>Age: </label><input type="number" required><br><br>
+                <label>Name: </label><input id="nameInput" autocomplete="on" type="text" pattern="" required><br><br>
+                <label>Email: </label><input id="emailInput" autocomplete="on" type="email" pattern="" required><br><br>
+                <label>Cellphone: </label><input id="cellphoneInput" autocomplete="on" type="tel" pattern="" required><br><br>
+                <label>Age: </label><input id="ageInput" autocomplete="on" type="number" required><br><br>
                 <label>Comment:</label><br>
-                <input id="commentBox" type="text">
+                <input id="commentInput" type="text">
             </form>
             <br>
-            <button class="next">Next</button>
+            <!-- TODO: Fix this button -->
+            <button id="submit" onclick="confirmBooking()">Submit</button> 
         </div>
-
+        
         <br><br>
         
         <!-- Booking summary -->
         <div class="section" id="confirm">
-            <h2>Booking Summary:</h2>
-            <p>OUTPUTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTS</p>
+            <h2>Booking Summary:</h2><br>
+            <label>Vehicle: </label><div id="vehicleOutput"></div><br>
+            <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
+            <label>Pick up date: </label><div id="pickupDate"></div><br>
+            <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
+            <label>Extras: </label><div id="extrasOutput"></div><br>
+            <label><b>Total cost: </b></label><div id="totalcost"></div>
         </div>
         <br><br>
     </div>
