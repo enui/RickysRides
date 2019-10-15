@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ricky's Rides</title>
+    <script src="rickysRides.js"></script> 
+</head>
+
+<!-- Main body -->
+<body>
+
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="main">
+            <br>
+            <h1>Ricky's Rides</h1>
+        </div>
+        <!-- TODO: Need to add image -->
+    </div>
+
+    <!-- The updating box on the side which shows some booking info -->
+    <!-- TODO: Add backend to output to this box, with event listeners -->
+    <div id="constantOutput">  
+        <h2>Summary:</h2><br>
+        <label>Vehicle: </label><div id="vehicleOutput"></div><br>
+        <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
+        <label>Pick up date: </label><div id="pickupDate"></div><br>
+        <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
+        <label>Extras: </label><div id="extrasOutput"></div><br>
+        <label><b>Total cost: </b></label><div id="totalcost"></div>
+    </div>
+
+    <!-- Vehicles -->
+    <!-- TODO: Fix alignment of vehicles, also make images more responsive -->
+    <!-- TODO: Add descriptions/price/seats -->
+    <div class="main">
+        <div class="section" id="vehicles">
+            <h2>Vehicles:</h2>
+            <form>
+                <div class="car">
+                    <h3>Toyota Estima</h3>
+                    <img src="images\toyota_estima.png">
+                    <p>Estima, very fast. All other slow and bad.</p>
+                </div>
+                <div class="car">
+                    <h3>Holden Captiva</h3>
+                    <img src="images\holden_captiva.jpg">
+                    <p>Bad</p>
+                </div>
+                <div class="car">
+                    <h3>Holden Trax</h3>
+                    <img src="images\Holden_Trax.jpg">
+                    <p>Bad</p>
+                </div>
+                <div class="car">
+                    <h3>Mazda 3</h3>
+                    <img src="images\mazda_3.JPG">
+                    <p>Bad</p>
+                </div>
+                <div class="car">
+                    <h3>Nissan Caravan</h3>
+                    <img src="images\nissan_caravan.jpg">
+                    <p>Bad</p>
+                </div>
+                <div class="car">
+                    <h3>Suzuki Swift</h3>
+                    <img src="images\suzuki_swift.jpg">
+                    <p>Bad</p>
+                </div>
+                <div class="car">
+                    <h3>Nissan Tiida</h3>
+                    <img src="images\nissan_tiida.jpg">
+                    <p>Bad</p>
+                </div>
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+        
+        <br><br>
+
+        <!-- Pick up date etc -->
+        <div class="section" id="booking">
+            <h2>Booking:</h2>
+            <form>
+                <br>
+                <label>Pick up date: </label><input type="date"><br><br>
+                <label>Number of days (max 14 days): </label><input id ="days" type="number" placeholder="e.g. 3" max="14">
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+        
+        <br><br>
+        
+        <!-- Extras to outfit your vehicle with -->
+        <div class="section" id="extras">
+            <h2>Extras:</h2><br>
+            <form>
+                <input type="checkbox"><label>Snow Chains - $60</label><br>
+                <input type="checkbox"><label>Roof Racks - $90</label><br>
+                <input type="checkbox"><label>Bike Rack - $120 (Fits max 3 bikes)</label><br>
+                <input type="checkbox"><label>GPS - $35</label><br>
+                <input type="checkbox"><label>Child Booster Seat - $50 (9kg - 36kg</label>
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+
+        <br><br>
+
+        <!-- Customers details -->
+        <div class="section" id="details">
+            <h2>Details:</h2><br>
+            <form>
+                <label>Name: </label><input type="text" pattern="" required><br><br>
+                <label>Email: </label><input type="email" pattern="" required><br><br>
+                <label>Cellphone: </label><input type="tel" pattern="" required><br><br>
+                <label>Age: </label><input type="number" required><br><br>
+                <label>Comment:</label><br>
+                <input id="commentBox" type="text">
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+
+        <br><br>
+        
+        <!-- Booking summary -->
+        <div class="section" id="confirm">
+            <h2>Booking Summary:</h2>
+            <p>OUTPUTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTS</p>
+        </div>
+        <br><br>
+    </div>
+
+    <div class="footer">
+        <div class="main">
+            <h1>Footerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr</h1>
+            <p>Contact details</p>
+            <div>
+                Map
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWq-eujoBPdThvgvTkzzxaODToAG8vl6M",
+    authDomain: "ricky-s-rides-497dc.firebaseapp.com",
+    databaseURL: "https://ricky-s-rides-497dc.firebaseio.com",
+    projectId: "ricky-s-rides-497dc",
+    storageBucket: "",
+    messagingSenderId: "1077777188369",
+    appId: "1:1077777188369:web:c0221c51612f002bab53b0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</html>
