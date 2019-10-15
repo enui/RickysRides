@@ -85,9 +85,10 @@
                 <label><input name="vehicle" type="radio" data-price="52" value="Holden Captiva">Holden Captiva</label>
                 <label><input name="vehicle" type="radio" data-price="62" value="Toyota Estima">Toyota Estima</label>
                 <label><input name="vehicle" type="radio" data-price="89" value="Nissan Leaf">Nissan Leaf</label>
-            </form>
+            
             <br>
             <button class="next" onclick="costs(document.thisForm)">Next</button>
+            </form>
         </div>
         
         <br><br>
@@ -126,8 +127,8 @@
         <div class="section" id="details">
             <h2>Details:</h2><br>
             <form>
-                <label>Name: </label><input id="nameInput" autocomplete="on" type="text" pattern="" required><br><br>
-                <label>Email: </label><input id="emailInput" autocomplete="on" type="email" pattern="" required><br><br>
+                <label>Name: </label><input id="nameInput" autocomplete="on" type="text" pattern="\w{1,}[-]\w{1,}[ ][A-Z][a-z]{1,}" required><br><br>
+                <label>Email: </label><input id="emailInput" autocomplete="on" type="email" pattern="\w{1,}@\w{1,}.\w{1,}" required><br><br>
                 <label>Cellphone: </label><input id="cellphoneInput" autocomplete="on" type="tel" pattern="" required><br><br>
                 <label>Age: </label><input id="ageInput" autocomplete="on" type="number" required><br><br>
                 <label>Comment:</label><br>

@@ -37,7 +37,8 @@ function confirmBooking() {
     var comment = commentInput.value;
     // TODO: Finish filling in the JSON file
     var bookingsEntry = {
-
+        name: name,
+        email: email,
     }
     bookingRef.push(bookingsEntry);
 }
