@@ -97,3 +97,23 @@ h3{
     border-radius: 2px;
     padding: 5px;
 }
+
+@media only screen and (max-width: 400px) {
+    .main{
+        width: 90%;
+    }
+    
+    .nav h1{
+        width: 100%;
+    }
+
+    #constantOutput{
+        display: none;
+    }
+
+    .car{
+        width: 100%;
+    }
+
+
+}
