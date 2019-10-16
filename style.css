@@ -70,25 +70,34 @@ h2{
     font-size: 3 rem;
     margin: 0;
     color: #000000;
+    padding: 0;
 }
 
 h3{
-    font-family: arvo;    
+    font-family: sans-serif;    
     padding: 0;
     margin: 0;
+
 }
 
 .car{
     width: 250px;
-    height: 250px;
+    height: 210px;
     display: inline-block;
-    border: 2px solid #afafaf;
-    margin: 10px;
+    background-color: #eceaea;
     text-align: center;
+    padding: 5px;
+    border: 5px solid #eceaea;
+    margin: 10px 5px 0px 0px;
 }
 
 .car img{
     width: 100%;
+    float: left;
+}
+
+#vehicleDetails{
+    height: 500px;
 }
 
 .next{
@@ -97,6 +106,23 @@ h3{
     border-radius: 2px;
     padding: 5px;
 }
+
+.invisible-radio {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.invisible-radio:checked + label{
+    border: 5px solid pink;
+}
+
+.invisible-radio:not(:checked) + label {
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 400px) {
     .main{
@@ -113,7 +139,10 @@ h3{
 
     .car{
         width: 100%;
+        padding: 0;  
     }
 
-
+    form{
+        padding: 0;
+    }
 }

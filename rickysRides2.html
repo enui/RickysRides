@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>Ricky's Rides</title>
+    <script src="rickysRides.js"></script> 
+</head>
+
+<!-- Main body -->
+<body>
+
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="main">
+            <br>
+            <h1>Ricky's Rides</h1>
+        </div>
+        <!-- TODO: Need to add image -->
+    </div>
+
+    <!-- The updating box on the side which shows some booking info -->
+    <!-- TODO: Add backend to output to this box, with event listeners -->
+    <div id="constantOutput">  
+        <h2>Summary:</h2><br>
+        <label>Vehicle: </label><div id="vehicleOutput"></div><br>
+        <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
+        <label>Pick up date: </label><div id="pickupDate"></div><br>
+        <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
+        <label>Extras: </label><div id="extrasOutput"></div><br>
+        <label><b>Total cost: </b></label><div id="totalcost"></div>
+    </div>
+
+    <!-- Vehicles -->
+    <!-- TODO: Fix alignment of vehicles, also make images more responsive -->
+    <!-- TODO: Add descriptions/price/seats -->
+    <div class="main">
+        <div class="section" id="vehicles">
+            <h2>Vehicles:</h2>
+            <form>
+                <input class="invisible-radio" id="tiida" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+                <label for="tiida">
+                    <div class="car">
+                        <h3>Nissan Tiida</h3>
+                        <img src="images\nissan_tiida.jpg">
+                    </div>
+                </label>
+
+                <input class="invisible-radio" id="swift" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <label for="swift">
+                    <div class="car">
+                        <h3>Suzuki Swift</h3>
+                        <img src="images\suzuki_swift.jpg">
+                    </div>
+                </label>
+
+                <input class="invisible-radio" id="captiva" name="vehicleRadios" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+                <label for="captiva">
+                    <div class="car">
+                        <h3>Holden Captiva</h3>
+                        <img src="images\holden_captiva.jpg">
+                    </div>
+                </label>
+
+                <input class="invisible-radio" id="trax" name="vehicleRadios" type="radio" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
+                <label for="trax">
+                    <div class="car">
+                        <h3>Holden Trax</h3>
+                        <img src="images\Holden_Trax.jpg">
+                    </div>
+                </label>
+
+                <input class="invisible-radio" id="mazda" name="vehicleRadios" type="radio" data-price="23" data-seats="5" data-style="5 door hatch or wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
+                <label for="mazda">
+                    <div class="car">
+                        <h3>Mazda 3</h3>
+                        <img src="images\mazda_3.JPG">
+                    </div>
+                </label>
+
+                <input class="invisible-radio" id="caravan" name="vehicleRadios" type="radio" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
+                <label for="caravan">
+                    <div class="car">
+                        <h3>Nissan Caravan</h3>
+                        <img src="images\nissan_caravan.jpg">
+                    </div>
+                </label>
+                
+                <input class="invisible-radio" id="estima" name="vehicleRadios" type="radio" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
+                <label class="car" for="estima">
+                        <h3>Toyota Estima</h3>
+                
+                        
+                        <img src="images\toyota_estima.png">
+                    
+                </label>
+            <br>
+
+            <div class="flex-container">
+      
+                <input type="radio" name="radios" id="radio1" class="invisible-radio" checked>
+                
+                <label for="radio1">
+                  Option 1
+                  <div class="styled-radio red">
+                    <img src="images\nissan_tiida.jpg" height="50px">
+                  </div>
+                </label>
+          
+                <input type="radio" name="radios" id="radio2" class="invisible-radio">
+                
+                <label for="radio2">
+                  Option 2
+                  <div class="styled-radio green"></div>
+                </label>
+          
+                <input type="radio" name="radios" id="radio3" class="invisible-radio">
+                
+                <label for="radio3">
+                  Option 3
+                  <div class="styled-radio blue"></div>
+                </label>
+                
+              </div>
+            
+            <!-- Vehicle details output -->
+            <div id="vehicleDetails"><br>
+                <h2>Vehicle Details:</h2>
+                
+            </div>
+
+            <button class="next" onclick="vehicle(document.thisForm)">Next</button>
+            
+            </form>
+        </div>
+        
+        <br><br>
+
+        <!-- Pick up date etc -->
+        <div class="section" id="booking">
+            <h2>Booking:</h2>
+            <form>
+                <br>
+                <label>Pick up date: </label><input type="date"><br><br>
+                <label>Number of days (max 14 days): </label><input id ="days" type="number" placeholder="e.g. 3" max="14">
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+        
+        <br><br>
+        
+        <!-- Extras to outfit your vehicle with -->
+        <div class="section" id="extras">
+            <h2>Extras:</h2><br>
+            <form>
+                <label><input type="checkbox" data-price="60" value="snowChains">Snow Chains - $60</label><br>
+                <label><input type="checkbox" data-price="90" value="roofRacks">Roof Racks - $90</label><br>
+                <label><input type="checkbox" data-price="120" value="bikeRack">Bike Rack - $120 (Fits max 3 bikes)</label><br>
+                <label><input type="checkbox" data-price="35" value="gps">GPS - $35</label><br>
+                <label><input type="checkbox" data-price="50" value="booster">Child Booster Seat - $50 (9kg - 36kg</label>
+            </form>
+            <br>
+            <button class="next">Next</button>
+        </div>
+
+        <br><br>
+
+        <!-- Customers details -->
+        <div class="section" id="details">
+            <h2>Details:</h2><br>
+            <form>
+                <label>Name: </label><input id="nameInput" autocomplete="on" type="text" pattern="\w{1,}[-]\w{1,}[ ][A-Z][a-z]{1,}" required><br><br>
+                <label>Email: </label><input id="emailInput" autocomplete="on" type="email" pattern="\w{1,}@\w{1,}.\w{1,}" required><br><br>
+                <label>Cellphone: </label><input id="cellphoneInput" autocomplete="on" type="tel" pattern="" required><br><br>
+                <label>Age: </label><input id="ageInput" autocomplete="on" type="number" required><br><br>
+                <label>Comment:</label><br>
+                <input id="commentInput" type="text">
+            
+            <br>
+            <!-- TODO: Fix this button -->
+            <button id="submit" onclick="confirmBooking()">Submit</button> 
+            </form>
+        </div>
+        
+        <br><br>
+        
+        <!-- Booking summary -->
+        <div class="section" id="confirm">
+            <h2>Booking Summary:</h2><br>
+            <label>Vehicle: </label><div id="vehicleOutput"></div><br>
+            <label>Vehicle Cost: </label><div id="vehicleCostOutput"></div><br>
+            <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
+            <label>Pick up date: </label><div id="pickupDate"></div><br>
+            <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
+            <label>Extras: </label><div id="extrasOutput"></div><br>
+            <label>Extras cost: </label><div id="extrasCostOutput"></div><br>
+            <label><b>Total cost: </b></label><div id="totalcost"></div>
+        </div>
+        <br><br>
+    </div>
+
+    <div class="footer">
+        <div class="main">
+            <h1>Contact details</h1     >
+            <p>Phone: 03 477 5277</p>
+            <p>Email: rickysrides@gmail.com</p>
+        </div>
+    </div>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWq-eujoBPdThvgvTkzzxaODToAG8vl6M",
+    authDomain: "ricky-s-rides-497dc.firebaseapp.com",
+    databaseURL: "https://ricky-s-rides-497dc.firebaseio.com",
+    projectId: "ricky-s-rides-497dc",
+    storageBucket: "",
+    messagingSenderId: "1077777188369",
+    appId: "1:1077777188369:web:c0221c51612f002bab53b0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</html>

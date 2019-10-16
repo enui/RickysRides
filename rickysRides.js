@@ -1,18 +1,49 @@
 // Javascript
 
+// Code to fix vehicle cards
+https://codepen.io/lionel-rowe/pen/KEogPJ
+
+// Global variables
+var BOOKINGFEE = 50;
+var INSURANCE = 20;
+var carCost = 0;
+var extraCost = 0;
+var days = 0;
+
 // Event listeners
 
-// 
+function vehicle(form){
+    var radios = document.getElementsByName('vehicleRadios');
 
-// Insurance $20 a day
-// $50 fee
-// Add extras
-// Price per day
-// Total cost
+    for (var i = 0, length = radios.length; i < length; i++){
+        if (radios[i].checked){
+            alert(radios[i].value);
+            break;
+        }
+    }
+}
 
+// Vehicle selection and info
+function vehicleSelection() {
+    vehicleSelection = 
+    vehicleInfo = {
+        vehicle: this.dataset.name,
+        seats: this.dataset.data-seats,
+        style: this.dataset.data-style,
+        luggage: this.dataset.data-luggage,
+        engineSize: this.dataset.data-engine,
+        fuelEconomy: this.dataset.data-economy,
+        fuelType: this.dataset.data-fuel,
+        transmission: this.dataset.data-trans,
+        price: this.dataset.data-price,
+    }
+
+
+}
+
+// Function
 function costs(form) {
     var totalCost = 0;
-    var BOOKINGFEE = 50;
     totalCost.innerHTML = totalCost;
     // TODO: Calculate days using 2 dates
     // Calculating vehicle selected

@@ -41,53 +41,57 @@
         <div class="section" id="vehicles">
             <h2>Vehicles:</h2>
             <form>
-                <div class="car">
-                    <h3>Toyota Estima</h3>
-                    <img src="images\toyota_estima.png">
-                    <p>Estima, very fast. All other slow and bad.</p>
-                </div>
-                <div class="car">
+                <input class="invisible-radio" id="tiida" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+                <label class="car" for="tiida">
+                        <h3>Nissan Tiida</h3>
+                        <img src="images\nissan_tiida.jpg">
+                </label>
+
+                <input class="invisible-radio" id="swift" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <label class="car" for="swift">
+                        <h3>Suzuki Swift</h3>
+                        <img src="images\suzuki_swift.jpg">
+                </label>
+
+                <input class="invisible-radio" id="captiva" name="vehicleRadios" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+                <label class="car" for="captiva">
                     <h3>Holden Captiva</h3>
                     <img src="images\holden_captiva.jpg">
-                    <p>Bad</p>
-                </div>
-                <div class="car">
+                </label>
+
+                <input class="invisible-radio" id="trax" name="vehicleRadios" type="radio" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
+                <label class="car" for="trax">
                     <h3>Holden Trax</h3>
                     <img src="images\Holden_Trax.jpg">
-                    <p>Bad</p>
-                </div>
-                <div class="car">
+                </label>
+
+                <input class="invisible-radio" id="mazda" name="vehicleRadios" type="radio" data-price="23" data-seats="5" data-style="5 door hatch or wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
+                <label class="car" for="mazda">
                     <h3>Mazda 3</h3>
                     <img src="images\mazda_3.JPG">
-                    <p>Bad</p>
-                </div>
-                <div class="car">
-                    <h3>Nissan Caravan</h3>
-                    <img src="images\nissan_caravan.jpg">
-                    <p>Bad</p>
-                </div>
-                <div class="car">
-                    <h3>Suzuki Swift</h3>
-                    <img src="images\suzuki_swift.jpg">
-                    <p>Bad</p>
-                </div>
-                <div class="car">
-                    <h3>Nissan Tiida</h3>
-                    <img src="images\nissan_tiida.jpg">
-                    <p>Bad</p>
-                </div>
-            
-            
-                <label><input name="vehicle" type="radio" data-price="18" value="Nissan Tiida">Nissan Tiida</label>
-                <label><input name="vehicle" type="radio" data-price="18" value="Suzuki Swift">Suzuki Swift</label>
-                <label><input name="vehicle" type="radio" data-price="23" value="Mazda 3">Mazda 3</label>
-                <label><input name="vehicle" type="radio" data-price="41" value="Holden Trax">Holden Trax</label>
-                <label><input name="vehicle" type="radio" data-price="52" value="Holden Captiva">Holden Captiva</label>
-                <label><input name="vehicle" type="radio" data-price="62" value="Toyota Estima">Toyota Estima</label>
-                <label><input name="vehicle" type="radio" data-price="89" value="Nissan Leaf">Nissan Leaf</label>
-            
+                </label>
+
+                <input class="invisible-radio" id="caravan" name="vehicleRadios" type="radio" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
+                <label class="car" for="caravan">
+                        <h3>Nissan Caravan</h3>
+                        <img src="images\nissan_caravan.jpg">
+                </label>
+                
+                <input class="invisible-radio" id="estima" name="vehicleRadios" type="radio" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
+                <label class="car" for="estima">
+                    <h3>Toyota Estima</h3>
+                    <img src="images\toyota_estima.png">
+                </label>
             <br>
-            <button class="next" onclick="costs(document.thisForm)">Next</button>
+            
+            <!-- Vehicle details output -->
+            <div id="vehicleDetails"><br>
+                <h2>Vehicle Details:</h2>
+
+            </div>
+
+            <button class="next" onclick="vehicle(document.thisForm)">Next</button>
+            
             </form>
         </div>
         
@@ -133,10 +137,11 @@
                 <label>Age: </label><input id="ageInput" autocomplete="on" type="number" required><br><br>
                 <label>Comment:</label><br>
                 <input id="commentInput" type="text">
-            </form>
+            
             <br>
             <!-- TODO: Fix this button -->
             <button id="submit" onclick="confirmBooking()">Submit</button> 
+            </form>
         </div>
         
         <br><br>
@@ -158,11 +163,9 @@
 
     <div class="footer">
         <div class="main">
-            <h1>Footer</h1>
-            <p>Contact details</p>
-            <div>
-                Map
-            </div>
+            <h1>Contact details</h1     >
+            <p>Phone: 03 477 5277</p>
+            <p>Email: rickysrides@gmail.com</p>
         </div>
     </div>
 </body>
