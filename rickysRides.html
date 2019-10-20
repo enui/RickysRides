@@ -31,21 +31,33 @@
             <div class="card" id="radios">
                 <h2>Vehicle:</h2><br>
 
+<<<<<<< HEAD
                 <input onclick="vehicle(document.bookingForm);" class="invisible-radio" id="tiida" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+=======
+                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+>>>>>>> master
                 <label class="car" for="tiida">
                     <h3>Nissan Tiida</h3>
                     <p>$18 per day</p>
                     <img src="images\nissan_tiida.jpg" alt="Nissan Tiida" title="Nissan Tiida">
                 </label>
 
+<<<<<<< HEAD
                 <input onclick="vehicle(document.bookingForm);" class="invisible-radio" id="swift" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+=======
+                <input class="invisible-radio" id="swift" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+>>>>>>> master
                 <label class="car" for="swift">
                     <h3>Suzuki Swift</h3>
                     <p>$18 per day</p>
                     <img src="images\suzuki_swift.jpg" alt="Suzuki Swift" title="Suzuki Swift">
                 </label>
 
+<<<<<<< HEAD
                 <input onclick="vehicle(document.bookingForm);" class="invisible-radio" id="captiva" name="vehicle" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+=======
+                <input class="invisible-radio" id="captiva" name="vehicle" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+>>>>>>> master
                 <label class="car" for="captiva">
                     <h3>Holden Captiva</h3>
                     <p>$52 per day</p>
@@ -156,7 +168,7 @@
                 <label>Check in date: </label> <input id="checkInDate" type="date" required><br><br>
                 <label>Number of days (Max 14): </label> <input id="numberOfDays" type="number" min="1" max="14" required>
             </div>
-
+            
             <br><br>
 
             <!-- Details -->
@@ -250,6 +262,7 @@
                 <!-- Submit and reset button -->
                 <button id="submitButton" onclick="majority(document.bookingForm)" type="button">Check</button>
                 <button id="resetButton" type="reset">Reset</button>
+                <button type="submit" onclick="upload()">Submit</button>
             </div>
         </form>
         <br><br>
@@ -260,25 +273,28 @@
 </body>
 
 <!-- Javascript -->
+<<<<<<< HEAD
+=======
+<script src="rickysRides.js"></script>
+>>>>>>> master
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDWq-eujoBPdThvgvTkzzxaODToAG8vl6M",
-    authDomain: "ricky-s-rides-497dc.firebaseapp.com",
-    databaseURL: "https://ricky-s-rides-497dc.firebaseio.com",
-    projectId: "ricky-s-rides-497dc",
-    storageBucket: "",
-    messagingSenderId: "1077777188369",
-    appId: "1:1077777188369:web:c0221c51612f002bab53b0"
+    apiKey: "AIzaSyAwJhux5l5_u_YLWXJXlQDvX3C8L98Wi5w",
+    authDomain: "rickysrides-784ac.firebaseapp.com",
+    databaseURL: "https://rickysrides-784ac.firebaseio.com",
+    projectId: "rickysrides-784ac",
+    storageBucket: "rickysrides-784ac.appspot.com",
+    messagingSenderId: "869754706669",
+    appId: "1:869754706669:web:0feab85b086779a7394ae4"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
-</html>

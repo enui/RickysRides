@@ -111,10 +111,6 @@ h3{
     float: left;
 }
 
-#vehicleDetails{
-    height: 500px;
-}
-
 .next{
     background-color: none;
     border: 2px solid grey;
