@@ -61,4 +61,31 @@ function majority(form){
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
 }
 
-$("#checkInDate").datepicker({ minDate:0});
+// Validity checker
+function validity(){
+    
+}
+
+// Firebase upload function
+function upload(){
+    alert("harro")
+    var database = firebase.database();
+    var booking = database.ref('bookings')
+    var firstName = firstNameInput.value;
+    var lastName = lastNameInput.value;
+    var name = firstName + ' ' + lastName;
+    var email = emailInput.value;
+    var phoneNumber = phoneNumberInput.value;
+    var age = ageInput.value;
+    var comment = commentInput.value;
+    var bookingsEntry = {
+        name: name,
+        email: email,
+        phoneNumber: phoneNumber,
+        age: age,
+        totalCost: totalCost,
+        comment: comment,
+    }
+    bookingRef.push(bookingsEntry);
+    alert("data has been pushed")
+}
