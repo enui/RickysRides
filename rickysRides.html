@@ -5,38 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <title>Ricky Test</title>
+    <title>Ricky's Rides</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="nav">
-        <h1>Ricky's Rides</h1>
+        <div class="main">
+            <h1>Ricky's Rides</h1>
+            <div id="navLogo">
+                <img src="images\ricky_s_rides_transparent.png">
+            </div>
+        </div>
     </div>
 
     <br><br>
 
+    <!-- The bulk of the site -->
     <div class="main">
         <form id="bookingForm" name="bookingForm">
             <!-- Radios -->
             <div class="card" id="radios">
                 <h2>Vehicle:</h2><br>
 
-                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+                <input onclick="majority()" class="invisible-radio" id="tiida" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
                 <label class="car" for="tiida">
                     <h3>Nissan Tiida</h3>
                     <p>$18 per day</p>
                     <img src="images\nissan_tiida.jpg" alt="Nissan Tiida" title="Nissan Tiida">
                 </label>
 
-                <input class="invisible-radio" id="swift" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <input onclick="majority();" class="invisible-radio" id="swift" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
                 <label class="car" for="swift">
                     <h3>Suzuki Swift</h3>
                     <p>$18 per day</p>
                     <img src="images\suzuki_swift.jpg" alt="Suzuki Swift" title="Suzuki Swift">
                 </label>
 
-                <input class="invisible-radio" id="captiva" name="vehicle" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+                <input onclick="majority();" class="invisible-radio" id="captiva" name="vehicle" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
                 <label class="car" for="captiva">
                     <h3>Holden Captiva</h3>
                     <p>$52 per day</p>
@@ -132,17 +138,17 @@
             <!-- Options -->
             <div class="card" id="options">
                 <h2>Options:</h2><br>
-                <label><input class="option-input checkbox" data-price="90" type="checkbox" value="Roof Racks">Roof Racks</label>
-                <label><input class="option-input checkbox" data-price="60" type="checkbox" value="Snow Chains">Snow Chains</label>
-                <label><input class="option-input checkbox" data-price="35" type="checkbox" value="GPS">GPS</label>
-                <label><input class="option-input checkbox" data-price="120" type="checkbox" value="Bike Rack">Bike Rack</label>
-                <label><input class="option-input checkbox" data-price="50" type="checkbox" value="Booster Seat">Child Booster Seat</label>
+                <label><input class="option-input checkbox" data-price="90" type="checkbox" value="Roof Racks">Roof Racks</label><br>
+                <label><input class="option-input checkbox" data-price="60" type="checkbox" value="Snow Chains">Snow Chains</label><br>
+                <label><input class="option-input checkbox" data-price="35" type="checkbox" value="GPS">GPS</label><br>
+                <label><input class="option-input checkbox" data-price="120" type="checkbox" value="Bike Rack">Bike Rack</label><br>
+                <label><input class="option-input checkbox" data-price="50" type="checkbox" value="Booster Seat">Child Booster Seat</label><br>
             </div>
 
             <br><br>
 
             <!-- Date/nights -->
-            <div class="card" id="date">
+            <div class="card" id="dates">
                 <h2>Date:</h2><br>
                 <label>Check in date: </label> <input id="checkInDate" type="date" required><br><br>
                 <label>Number of days (Max 14): </label> <input id="numberOfDays" type="number" min="1" max="14" required>
@@ -239,7 +245,7 @@
                 <br>
 
                 <!-- Submit and reset button -->
-                <button id="submitButton" onclick="loopForm(document.bookingForm)" type="button">Check</button>
+                <button id="submitButton" onclick="majority(document.bookingForm)" type="button">Check</button>
                 <button id="resetButton" type="reset">Reset</button>
             </div>
         </form>
@@ -251,8 +257,8 @@
 </body>
 
 <!-- Javascript -->
-<!-- TODO: Rename this file -->
 <script src="rickysRides.js"></script>
+<script src="src="https://code.jquery.com/jquery-3.4.1.js""></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>

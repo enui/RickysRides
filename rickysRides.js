@@ -1,8 +1,7 @@
 // Javascript
-loopForm();
 
 // Function
-function loopForm(form){
+function majority(form){
     // Variables
     var totalCost = 0;
     var INSURANCE = 20;
@@ -61,3 +60,5 @@ function loopForm(form){
     outputInsurance.innerHTML = '$' + INSURANCE;
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
 }
+
+$("#checkInDate").datepicker({ minDate:0});

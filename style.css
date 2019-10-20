@@ -22,9 +22,24 @@ body{
 }
 
 .nav h1{
-    width: 500px;   
+    width: 500px;
+    float: left;
+    color: #ffffff;
+    margin-top: 17px;  
 }
 
+#navLogo{
+    float: right;
+    margin-right: 5%;
+    background-color: #ffffff;
+    height: 150px;
+    box-shadow: 0px 5px 3px #afafaf;
+}
+
+#navLogo img{
+    margin-top: 5%;
+    width: 150px;
+}
 
 .footer{
     background-color: #F25C05;
@@ -116,7 +131,7 @@ h3{
 }
 
 .invisible-radio:checked + label{
-    border: 5px solid pink;
+    border: 5px solid orange;
 }
 
 .invisible-radio:not(:checked) + label {
