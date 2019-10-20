@@ -1,88 +1,63 @@
 // Javascript
+loopForm();
 
-// Checkvalidity function
-// Car selection funtion
-// Extras function
-// Output to firebase function
-// Total cost function (insurance etc)
+// Function
+function loopForm(form){
+    // Variables
+    var totalCost = 0;
+    var INSURANCE = 20;
+    var BOOKINGFEE = 50;
+    var extrasTotal = 0;
+    var extras = ' ';
+    var checkIn = checkInDate.value;
+    var noOfDays = numberOfDays.value;
 
-// Global variables
-var BOOKINGFEE = 50;
-var INSURANCE = 20;
-var carCost = 0;
-var extraCost = 0;
-var days = 0;
+    // For loop that goes through program looking for radios and checkboxes
+    for (var i = 0; i < form.elements.length; i++) {
+        // Vehicle selection code
+        if (form.elements[i].type == 'radio') {
+            if (form.elements[i].checked == true) {
+                vehicle = form.elements[i].value;
+                vehicleCost = form.elements[i].dataset.price;
+                seats = form.elements[i].dataset.seats;
+                style = form.elements[i].dataset.style;
+                luggage = form.elements[i].dataset.luggage;
+                engine = form.elements[i].dataset.engine;
+                economy = form.elements[i].dataset.economy;
+                fuel = form.elements[i].dataset.fuel;
+                trans = form.elements[i].dataset.trans;
+            }
+        }
+        // Extras code
+        if(form.elements[i].type == 'checkbox') {
+            if(form.elements[i].checked == true) {
+                // Lists off all the extras selected
+                extras += form.elements[i].value + ', ';
+                // Adds price of extras to 'sum' this is later added to the total cost
+                extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
+            }
+        }
+    }
+    // Calculates total cost
+    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
-// Vehicle selection form
-var vehicleForm = document.querySelector("#vehicleSelection");
-var vehicleOutput = document.querySelector("#vehicleOutput");
+    // Vehicle detail outputs
+    outputSeats.innerHTML = seats;
+    outputStyle.innerHTML = style;
+    outputLuggage.innerHTML = luggage;
+    outputEngine.innerHTML = engine;
+    outputEconomy.innerHTML = economy;
+    outputFuel.innerHTML = fuel;
+    outputTrans.innerHTML = trans;
 
-vehicleForm.addEventListener("submit", function(event) {
-    var data = new FormData(vehicleForm);
-    var output = "";
-    for (const entry of data) {
-        vehicleChoice = entry[1];
-    };
-    vehicleOutput.innerText = vehicleChoice;
-    event.preventDefault();
-}, false);
-
-
-    
-var vehicleSpecsOutput = document.querySelector("#vehicleSpecsOutput");
-vehicleSelection = document.querySelector(vehicleChoice).value;
-vehicleInfo = {
-    vehicle: this.dataset.name,
-    seats: this.dataset.data-seats,
-    style: this.dataset.data-style,
-    luggage: this.dataset.data-luggage,
-    engineSize: this.dataset.data-engine,
-    fuelEconomy: this.dataset.data-economy,
-    fuelType: this.dataset.data-fuel,
-    transmission: this.dataset.data-trans,
-    price: this.dataset.data-price,
+    // Outputs
+    outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
+    outputDate.innerHTML = checkIn;
+    outputDays.innerHTML = noOfDays + " Days";
+    outputVehicle.innerHTML = vehicle;
+    outputPrice.innerHTML = '$' + vehicleCost + " per day"; 
+    outputExtras.innerHTML = extras;
+    outputExtrasTotal.innerHTML = '$' + extrasTotal;
+    outputInsurance.innerHTML = '$' + INSURANCE;
+    outputBookingFee.innerHTML = '$' + BOOKINGFEE
 }
-vehicleSpecsOutput.innerHTML = vehicleSelection;
-
-
-// // Costs function
-// function costs(form) {
-//     var totalCost = 0;
-//     var days = daysInput.value;
-//     totalCost.innerHTML = totalCost;
-//     // Calculating vehicle selected
-//     for (var i = 0; i < form.elements.length; i++){
-//         if(form.elements[i].type == "radio") {
-//             if (form.elements[i].checked == true) {
-//                 vehicleChoice = form.elements[i].value;
-//                 vehicleCost = form.elements[i].dataset.price;
-//                 vehicleOutput.innerHTML = vehicleChoice;
-//             }
-//         }
-//     }
-// }
-
-// // Firebase function
-// function confirmBooking(form) {
-//     if(!form.terms.checked) {
-//         alert("Please indicate that you accept the Terms and Conditions");
-//         form.terms.focus();
-//         return false;
-//     }
-//     return true;
-//     var database = firebase.database();
-//     var bookingRef = database.ref('bookings');
-//     var firstName = firstNameInput.value;
-//     var lastName = lastNameInput.value;
-//     var email = emailInput.value;
-//     var cellphone = cellphoneInput.vale;
-//     var age = ageInput.value;
-//     var comment = commentInput.value;
-//     // TODO: Finish filling in the JSON file
-//     var bookingsEntry = {
-//         name: firstName + lastName,
-//         email: email,
-//         cellphone: 
-//     }
-//     bookingRef.push(bookingsEntry);
-// }

@@ -1,186 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Ricky's Rides</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Ricky Test</title>
 </head>
 
-<!-- Main body -->
 <body>
-
     <!-- Navbar -->
     <div class="nav">
-        <div class="main">
-            <br>
-            <h1>Ricky's Rides</h1>
-        </div>
-        <!-- TODO: Need to add image -->
+        <h1>Ricky's Rides</h1>
     </div>
 
-    <!-- The updating box on the side which shows some booking info -->
-    <!-- TODO: Add backend to output to this box, with event listeners -->
-    <div id="constantOutput">  
-        <h2>Summary:</h2><br>
-        <label>Vehicle: </label><div id="vehicleOutput"></div><br>
-        <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
-        <label>Pick up date: </label><div id="pickupDate"></div><br>
-        <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
-        <label>Extras: </label><div id="extrasOutput"></div><br>
-        <label><b>Total cost: </b></label><div id="totalcost"></div>
-    </div>
+    <br><br>
 
-    <!-- Vehicles -->
     <div class="main">
-        <div class="section" id="vehicles">
-            <h2>Vehicles:</h2>
-            <form id="vehicleSelection">
-                <input class="invisible-radio" id="tiida" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
+        <form id="bookingForm" name="bookingForm">
+            <!-- Radios -->
+            <div class="card" id="radios">
+                <h2>Vehicle:</h2><br>
+
+                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida">
                 <label class="car" for="tiida">
                     <h3>Nissan Tiida</h3>
                     <p>$18 per day</p>
                     <img src="images\nissan_tiida.jpg" alt="Nissan Tiida" title="Nissan Tiida">
                 </label>
 
-                <input class="invisible-radio" id="swift" name="vehicleRadios" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <input class="invisible-radio" id="swift" name="vehicle" type="radio" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
                 <label class="car" for="swift">
                     <h3>Suzuki Swift</h3>
                     <p>$18 per day</p>
                     <img src="images\suzuki_swift.jpg" alt="Suzuki Swift" title="Suzuki Swift">
                 </label>
 
-                <input class="invisible-radio" id="captiva" name="vehicleRadios" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+                <input class="invisible-radio" id="captiva" name="vehicle" type="radio" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
                 <label class="car" for="captiva">
                     <h3>Holden Captiva</h3>
                     <p>$52 per day</p>
                     <img src="images\holden_captiva.jpg" alt="Holden Captiva" title="Holden Captiva">
                 </label>
 
-                <input class="invisible-radio" id="trax" name="vehicleRadios" type="radio" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
+                <input class="invisible-radio" id="trax" name="vehicle" type="radio" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
                 <label class="car" for="trax">
                     <h3>Holden Trax</h3>
                     <p>$41 per day</p>
                     <img src="images\Holden_Trax.jpg" alt="Holden Trax" title="Holden Trax">
                 </label>
 
-                <input class="invisible-radio" id="mazda" name="vehicleRadios" type="radio" data-price="23" data-seats="5" data-style="5 door hatch or wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
+                <input class="invisible-radio" id="mazda" name="vehicle" type="radio" data-price="23" data-seats="5" data-style="5 door hatch or wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
                 <label class="car" for="mazda">
                     <h3>Mazda 3</h3>
                     <p>$23 per day</p>
                     <img src="images\mazda_3.JPG" alt="Mazda 3" title="Mazda 3">
                 </label>
 
-                <input class="invisible-radio" id="caravan" name="vehicleRadios" type="radio" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
+                <input class="invisible-radio" id="caravan" name="vehicle" type="radio" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
                 <label class="car" for="caravan">
                     <h3>Nissan Caravan</h3>
                     <p>$89 per day</p>
                     <img src="images\nissan_caravan.jpg" alt="Nissan Caravan" title="Nissan Caravan">
                 </label>
                 
-                <input class="invisible-radio" id="estima" name="vehicleRadios" type="radio" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
+                <input class="invisible-radio" id="estima" name="vehicle" type="radio" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
                 <label class="car" for="estima">
                     <h3>Toyota Estima</h3>
                     <p>$62 per day</p>
                     <img src="images\toyota_estima.png" alt="Toyota Estima" title="Toyota Estima">
                 </label>
-            <br>
             
-            <!-- Vehicle details output -->
-            <div id="vehicleDetails">
-                <div id="log"></div>
+            <br><br>
+
+            <table>
+                    <tr>
+                        <td>Number of seats:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputSeats"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Body style:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputStyle"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Luggage:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputLuggage"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Engine size:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputEngine"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fuel economy:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputEconomy"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fuel type:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputFuel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Transmission:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputTrans"></div>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
-            <div id="vehicleSpecsOutput"></div>
+            <br><br>
 
-            <button type="submit" class="next" id="vehicleNextBtn">Next</button>
-            
-            </form>
-        </div>
-        
-        <br><br>
 
-        <!-- Pick up date etc -->
-        <div class="section" id="booking">
-            <h2>Booking:</h2>
-            <form>
+            <!-- Options -->
+            <div class="card" id="options">
+                <h2>Options:</h2><br>
+                <label><input class="option-input checkbox" data-price="90" type="checkbox" value="Roof Racks">Roof Racks</label>
+                <label><input class="option-input checkbox" data-price="60" type="checkbox" value="Snow Chains">Snow Chains</label>
+                <label><input class="option-input checkbox" data-price="35" type="checkbox" value="GPS">GPS</label>
+                <label><input class="option-input checkbox" data-price="120" type="checkbox" value="Bike Rack">Bike Rack</label>
+                <label><input class="option-input checkbox" data-price="50" type="checkbox" value="Booster Seat">Child Booster Seat</label>
+            </div>
+
+            <br><br>
+
+            <!-- Date/nights -->
+            <div class="card" id="date">
+                <h2>Date:</h2><br>
+                <label>Check in date: </label> <input id="checkInDate" type="date" required><br><br>
+                <label>Number of days (Max 14): </label> <input id="numberOfDays" type="number" min="1" max="14" required>
+            </div>
+
+            <br><br>
+
+            <!-- Details -->
+            <div class="card" class="card" id="details">
+                <h2>Details:</h2><br>
+                <label>Age: </label><input autocomplete="on" id="ageInput" placeholder="18" required title="Enter your age" type="number" min="18" max="100"><br><br>
+                <label>First name: </label><input autocomplete="on" id="firstNameInput" placeholder="John" required title="Enter your first name" type="text"><br><br>
+                <label>Last name: </label><input autocomplete="on" id="lastNameInput" placeholder="Smith" required title="Enter your last name" type="text"><br><br>
+                <label>Email address: </label><input autocomplete="on" id="emailInput" placeholer="ethanw.17167@obhs.school.nz" required title="Enter your email address"><br><br>
+                <label>Cellphone: </label><input autocomplete="on" id="cellphoneInput" placeholder="0225020050" required title="Enter your cellphone number" type="tel"><br><br>
+                <!-- TODO: Currently adjustable size by user, needs to be fixed -->
+                <label>Comments: </label><textarea placeholder="Please enter any comments"></textarea>
+            </div>
+
+            <br><br>
+
+            <!-- Booking summary -->
+            <div class="card" id="booking">    
+                <h2>Booking Summary</h2><br>
+                <table>
+                    <tr>
+                        <td>Check in date:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputDate"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Selected vehicle:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputVehicle"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Car cost per day:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputPrice"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Insurance per day:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputInsurance"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Booking fee:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputBookingFee"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Number of days:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputDays"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Extras:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputExtras"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Extras total:</td>
+                        <td></td>
+                        <td>
+                            <div id="outputExtrasTotal"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Total Cost:</b></td>
+                        <td></td>
+                        <td>
+                            <div id="outputCost"></div>
+                        </td>
+                    </tr>
+                </table>
+
                 <br>
-                <label>Pick up date: </label><input type="date"><br><br>
-                <label>Number of days (max 14 days): </label><input id ="daysInput" type="number" placeholder="e.g. 3" max="14">
-            </form>
-            <br>
-            <button class="next">Next</button>
-        </div>
-        
-        <br><br>
-        
-        <!-- Extras to outfit your vehicle with -->
-        <div class="section" id="extras">
-            <h2>Extras:</h2><br>
-            <form>
-                <label><input type="checkbox" data-price="60" value="snowChains">Snow Chains - $60</label><br>
-                <label><input type="checkbox" data-price="90" value="roofRacks">Roof Racks - $90</label><br>
-                <label><input type="checkbox" data-price="120" value="bikeRack">Bike Rack - $120 (Fits max 3 bikes)</label><br>
-                <label><input type="checkbox" data-price="35" value="gps">GPS - $35</label><br>
-                <label><input type="checkbox" data-price="50" value="booster">Child Booster Seat - $50 (9kg - 36kg</label>
-            </form>
-            <br>
-            <button class="next">Next</button>
-        </div>
 
+                <!-- Submit and reset button -->
+                <button id="submitButton" onclick="loopForm(document.bookingForm)" type="button">Check</button>
+                <button id="resetButton" type="reset">Reset</button>
+            </div>
+        </form>
         <br><br>
-
-        <!-- Customers details -->
-        <div class="section" id="details">
-            <h2>Details:</h2><br>
-            <form>
-                <label>First name: </label><input id="firstNameInput" autocomplete="on" type="text" pattern="\w{1,}" required><br><br>
-                <label>Last name: </label><input id="lastNameInput" autocomplete="on" type="text" pattern="\w{1,}" required><br><br>
-                <label>Email: </label><input id="emailInput" autocomplete="on" type="email" pattern="\w{1,}[.]\w{1,}@\w{1,}.\w{1,}" required><br><br>
-                <label>Cellphone: </label><input id="cellphoneInput" autocomplete="on" type="tel" required><br><br>
-                <label>Age: </label><input id="ageInput" autocomplete="on" type="number" min="20" max="100" required><br><br>
-                <label>Comment:</label><br>
-                <input id="commentInput" type="text">
-            
-            <br>
-            <!-- TODO: Fix this button -->
-            <button id="submit" onclick="confirmBooking()">Submit</button> 
-            </form>
-        </div>
-        
-        <br><br>
-        
-        <!-- Booking summary -->
-        <div class="section" id="confirm">
-            <h2>Booking Summary:</h2><br>
-            <label>Vehicle: </label><div id="vehicleOutput"></div><br>
-            <label>Vehicle Cost: </label><div id="vehicleCostOutput"></div><br>
-            <label>Seats: </label><div id="vehicleSeatsOutput"></div><br>
-            <label>Pick up date: </label><div id="pickupDate"></div><br>
-            <label>Number of days: </label><div id="noOfDaysOutput"></div><br>
-            <label>Extras: </label><div id="extrasOutput"></div><br>
-            <label>Extras cost: </label><div id="extrasCostOutput"></div><br>
-            <label><b>Total cost: </b></label><div id="totalcost"></div>
-        </div>
-        <br><br>
-
-        <p><input type="checkbox" name="terms"> I accept the <u>Terms and Conditions</u></p>
-        <p><input type="submit"></p>
     </div>
+    <footer>
 
-    <div class="footer">
-        <div class="main">
-            <h1>Contact details</h1     >
-            <p>Phone: 03 477 5277</p>
-            <p>Email: rickysrides@gmail.com</p>
-        </div>
-    </div>
+    </footer>
 </body>
 
 <!-- Javascript -->
-<script src="rickysRides.js"></script> 
+<!-- TODO: Rename this file -->
+<script src="rickysRides.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
@@ -202,7 +274,4 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
-
-
-
 </html>
