@@ -131,17 +131,23 @@ h3{
 }
 
 .invisible-radio:checked + label{
-    border: 5px solid orange;
+    border: 5px solid #F25C05;
 }
 
 .invisible-radio:not(:checked) + label {
     cursor: pointer;
 }
 
+textarea {
+    width: 50%;
+    height: 70px;
+    resize: none;
+}
 
+/* Media query for phones */
 @media only screen and (max-width: 400px) {
     .main{
-        width: 90%;
+        width: 95%;
     }
     
     .nav h1{
@@ -159,5 +165,12 @@ h3{
 
     form{
         padding: 0;
+    }
+}
+
+/* Media query for ultrawide resolutions */
+@media only screen and (min-width: 2560px) {
+    .main{
+        width: 50%;
     }
 }

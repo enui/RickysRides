@@ -1,5 +1,7 @@
 // Javascript
 
+document.getElementById('radios').addEventListener("input", vehicle()) 
+
 // Function
 function majority(form){
     // Variables
@@ -40,15 +42,6 @@ function majority(form){
     // Calculates total cost
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
-    // Vehicle detail outputs
-    outputSeats.innerHTML = seats;
-    outputStyle.innerHTML = style;
-    outputLuggage.innerHTML = luggage;
-    outputEngine.innerHTML = engine;
-    outputEconomy.innerHTML = economy;
-    outputFuel.innerHTML = fuel;
-    outputTrans.innerHTML = trans;
-
     // Outputs
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
     outputDate.innerHTML = checkIn;
@@ -61,4 +54,30 @@ function majority(form){
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
 }
 
-$("#checkInDate").datepicker({ minDate:0});
+function vehicle(form) {
+    // For loop that goes through program looking for radios
+    for (var i = 0; i < form.elements.length; i++) {
+        // Vehicle selection code
+        if (form.elements[i].type == 'radio') {
+            if (form.elements[i].checked == true) {
+                vehicle = form.elements[i].value;
+                vehicleCost = form.elements[i].dataset.price;
+                seats = form.elements[i].dataset.seats;
+                style = form.elements[i].dataset.style;
+                luggage = form.elements[i].dataset.luggage;
+                engine = form.elements[i].dataset.engine;
+                economy = form.elements[i].dataset.economy;
+                fuel = form.elements[i].dataset.fuel;
+                trans = form.elements[i].dataset.trans;
+            }
+        }
+    }
+    // Vehicle detail outputs
+    outputSeats.innerHTML = seats;
+    outputStyle.innerHTML = style;
+    outputLuggage.innerHTML = luggage;
+    outputEngine.innerHTML = engine;
+    outputEconomy.innerHTML = economy;
+    outputFuel.innerHTML = fuel;
+    outputTrans.innerHTML = trans;
+}
