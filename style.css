@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bitter|Montserrat&display=swap');
 
 
 
@@ -43,32 +43,25 @@ body{
     width: 150px;
 }
 
-.footer{
+footer{
     background-color: #F25C05;
     height: 200px;
     color: #afafaf;
 }
 
-#constantOutput{
-    float: left;
-    width: 280px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 4px #afafaf;
-    margin: 20px 0px 0px 15px;
-    padding: 10px;
-    position: sticky;   
-    top: 20px;
+footer h2{
+    color: #ffffff;
+    padding:  20px 0px 20px 0px;
 }
 
-#commentBox{
-    height: 200px;
-    width: 800px;
-    text-align: top;
+footer p{
+    color: #ffffff;
 }
 
 #vehicles{
     margin: 20px 0 0 0;
 }
+
 .card{
     background-color: #ffffff;
     padding: 20px;
@@ -76,14 +69,14 @@ body{
 }
 
 h1{
-    font-family: arvo;
+    font-family: bitter;
     margin: 0;
     color: #DFDFD7;
     font-size: 48px;
 }
 
 h2{
-    font-family: arvo;
+    font-family: bitter;
     font-size: 3 rem;
     margin: 0;
     color: #000000;

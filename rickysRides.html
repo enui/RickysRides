@@ -251,9 +251,14 @@
 
                 <br>
 
+                <!-- Accept terms and conditions -->
+
+                <input type="checkbox"><label> Accept terms and conditions</label>
+
+                <br><br>
+
                 <!-- Submit and reset button -->
-                <button id="checkButton" onclick="validity(document.bookingForm)" type="button" disabled>Check</button>
-                <button id="submitButton" onclick="majority(document.bookingForm)" type="button" disabled>Submit</button>
+                <button id="submitButton" onclick="majority(document.bookingForm)" type="button">Submit</button>
                 <button id="resetButton" type="reset">Reset</button>
                 
             </div>
@@ -261,7 +266,12 @@
         <br><br>
     </div>
     <footer>
-
+        <div class="main">
+            <h2>Contact details:</h2>
+            <p>Email address: </p>
+            <p>Phone number: </p>
+            <p>Address: </p>
+        </div>
     </footer>
 
     <!-- Javascript -->
