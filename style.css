@@ -173,6 +173,18 @@ textarea {
     }
 }
 
+/* Split screen 1080p / tablet */
+@media only screen and (max-width: 1000px) {
+    .main{
+        width: 90%;
+    }
+
+    .car{
+        width: 35%;
+        height: 300px;
+    }
+}
+
 /* Calendar */
 .ui-datepicker {
     background: #dfdfd7;
