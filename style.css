@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo|Montserrat&display=swap');
 
+
+
 html{
     background-color: #dfdfd7;
 }
@@ -169,4 +171,36 @@ textarea {
     .main{
         width: 50%;
     }
+}
+
+/* Calendar */
+.ui-datepicker {
+    background: #dfdfd7;
+    font-size: 14px;
+    padding: 10px;
+    border: 2px solid #ffeedd;
+}
+
+.ui-datepicker-prev {
+}
+
+.ui-datepicker-next {
+float:right;
+}
+
+a.ui-state-default:hover{
+    border: 1px solid white;
+    background: #5bfec8;
+    font-weight: bold;
+    color: black;
+}
+
+.ui-datepicker a{
+    color: black;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    font-weight:bold;
+
 }

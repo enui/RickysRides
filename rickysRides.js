@@ -1,6 +1,6 @@
 // Javascript
 
-document.getElementById('radios').addEventListener("input", vehicle()) 
+bookingForm.addEventListener("input", majority);
 
 // Function
 function majority(form){
@@ -10,7 +10,7 @@ function majority(form){
     var BOOKINGFEE = 50;
     var extrasTotal = 0;
     var extras = ' ';
-    var checkIn = checkInDate.value;
+    var pickUp = pickUpDate.value;
     var noOfDays = numberOfDays.value;
 
     // For loop that goes through program looking for radios and checkboxes
@@ -39,12 +39,22 @@ function majority(form){
             }
         }
     }
+
+    // Vehicle detail outputs
+    outputSeats.innerHTML = seats;
+    outputStyle.innerHTML = style;
+    outputLuggage.innerHTML = luggage;
+    outputEngine.innerHTML = engine;
+    outputEconomy.innerHTML = economy;
+    outputFuel.innerHTML = fuel;
+    outputTrans.innerHTML = trans;
+
     // Calculates total cost
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
     // Outputs
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
-    outputDate.innerHTML = checkIn;
+    outputDate.innerHTML = pickUp;
     outputDays.innerHTML = noOfDays + " Days";
     outputVehicle.innerHTML = vehicle;
     outputPrice.innerHTML = '$' + vehicleCost + " per day"; 
@@ -54,34 +64,7 @@ function majority(form){
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
 }
 
-<<<<<<< HEAD
-function vehicle(form) {
-    // For loop that goes through program looking for radios
-    for (var i = 0; i < form.elements.length; i++) {
-        // Vehicle selection code
-        if (form.elements[i].type == 'radio') {
-            if (form.elements[i].checked == true) {
-                vehicle = form.elements[i].value;
-                vehicleCost = form.elements[i].dataset.price;
-                seats = form.elements[i].dataset.seats;
-                style = form.elements[i].dataset.style;
-                luggage = form.elements[i].dataset.luggage;
-                engine = form.elements[i].dataset.engine;
-                economy = form.elements[i].dataset.economy;
-                fuel = form.elements[i].dataset.fuel;
-                trans = form.elements[i].dataset.trans;
-            }
-        }
-    }
-    // Vehicle detail outputs
-    outputSeats.innerHTML = seats;
-    outputStyle.innerHTML = style;
-    outputLuggage.innerHTML = luggage;
-    outputEngine.innerHTML = engine;
-    outputEconomy.innerHTML = economy;
-    outputFuel.innerHTML = fuel;
-    outputTrans.innerHTML = trans;
-=======
+
 // Validity checker
 function validity(){
     
@@ -109,5 +92,19 @@ function upload(){
     }
     bookingRef.push(bookingsEntry);
     alert("data has been pushed")
->>>>>>> master
 }
+
+// Date code
+let today = new Date(),
+    day = today.getDate(),
+    month = today.getMonth() + 1,
+    year = today.getFullYear();
+if (day < 10) {
+    day = '0' + day
+}
+if (month < 10) {
+    month = '0' + month
+}
+today = year + '-' + month + '-' + day;
+
+document.getElementById("pickUpDate").setAttribute("min", today);
