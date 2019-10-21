@@ -96,9 +96,9 @@ function upload(){
 
 // Date code
 let today = new Date(),
-    day = today.getDate(),
-    month = today.getMonth() + 1,
-    year = today.getFullYear();
+day = today.getDate(),
+month = today.getMonth() + 1,
+year = today.getFullYear();
 if (day < 10) {
     day = '0' + day
 }
