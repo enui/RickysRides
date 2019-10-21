@@ -167,12 +167,12 @@
             <div class="card" class="card" id="details">
                 <h2>Details:</h2><br>
                 <label>Age: </label><input autocomplete="on" id="ageInput" placeholder="18" required title="Enter your age" type="number" min="18" max="100"><br><br>
-                <label>First name: </label><input autocomplete="on" id="firstNameInput" placeholder="John" required title="Enter your first name" type="text"><br><br>
-                <label>Last name: </label><input autocomplete="on" id="lastNameInput" placeholder="Smith" required title="Enter your last name" type="text"><br><br>
-                <label>Email address: </label><input autocomplete="on" id="emailInput" placeholer="ethanw.17167@obhs.school.nz" required title="Enter your email address"><br><br>
+                <label>First name: </label><input autocomplete="on" id="firstNameInput" placeholder="John" required title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
+                <label>Last name: </label><input autocomplete="on" id="lastNameInput" placeholder="Smith" required title="Enter your last name" type="text" pattern="[A-Za-z]{2,}"><br><br>
+                <label>Email address: </label><input autocomplete="on" id="emailInput" placeholer="ethanw.17167@obhs.school.nz" required title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
                 <label>Cellphone: </label><input autocomplete="on" id="phoneNumberInput" placeholder="0225020050" required title="Enter your cellphone number" type="tel"><br><br>
                 <label>Comments: </label><br>
-                <textarea placeholder="Please enter any comments"></textarea>
+                <textarea id="commentInput" placeholder="Please enter any comments"></textarea>
             </div>
 
             <br><br>
@@ -252,9 +252,10 @@
                 <br>
 
                 <!-- Submit and reset button -->
-                <button id="submitButton" onclick="majority(document.bookingForm)" type="button">Check</button>
+                <button id="checkButton" onclick="validity(document.bookingForm)" type="button" disabled>Check</button>
+                <button id="submitButton" onclick="majority(document.bookingForm)" type="button" disabled>Submit</button>
                 <button id="resetButton" type="reset">Reset</button>
-                <button type="submit" onclick="upload()">Submit</button>
+                
             </div>
         </form>
         <br><br>

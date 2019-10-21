@@ -1,8 +1,6 @@
 // Javascript
 
-bookingForm.addEventListener("input", majority);
-
-// Function
+// Function boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 function majority(form){
     // Variables
     var totalCost = 0;
@@ -63,7 +61,7 @@ function majority(form){
     outputInsurance.innerHTML = '$' + INSURANCE;
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
 
-    alert("harro");
+    // Upload to firebase
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;
@@ -71,45 +69,53 @@ function majority(form){
     var fullName = firstName + ' ' + lastName;
     var emailAddress = emailInput.value;
     var phoneNumber = phoneNumberInput.value;
-    alert("dataaaaaaaaaaa");
     var userAge = ageInput.value;
+    var comment = commentInput.value;
     var bookingsEntry = {
         name: fullName,
+        vehicle: vehicle,
+        pickUpDate: pickUp,
         email: emailAddress,
         phone: phoneNumber,
         age: userAge,
-        totalCost: totalCost
+        totalCost: '$' + totalCost,
+        extras: extras,
+        comment: comment
     }
     bookingRef.push(bookingsEntry);
-    alert("data has been pushed");
 }
 
+// // If email valid will allow you to submit form
+// const emailInput = document.getElementById('emailInput');
+// const submitButton = document.getElementById('submitButton');
 
-// Validity checker
 
-// Firebase upload function
-function upload(){
-    alert("harro");
-    var database = firebase.database();
-    var bookingRef = database.ref('bookings');
-    var firstName = firstNameInput.value;
-    var lastName = lastNameInput.value;
-    var fullName = firstName + ' ' + lastName;
-    var emailAddress = emailInput.value;
-    var phoneNumber = phoneNumberInput.value;
-    var userAge = ageInput.value;
-    var userComment = commentInput.value;
-    alert("data has been pushed");
-    var bookingsEntry = {
-        name: fullName,
-        email: emailAddress,
-        phone: phoneNumber,
-        age: userAge,
-        totalCost: totalCost,
-        comment: userComment
-    }
-    bookingRef.push(bookingsEntry);
-    alert("data has been pushed");
+// emailInput.addEventListener('keyup', function (validity) {
+//     isValidEmail = emailInput.checkValidity();
+
+//     if (isValidEmail) {
+//         submitButton.disabled = false;
+//     } else{
+//         submitButton.disabled = true;
+//     }
+// })
+
+
+
+// Check validity
+
+const checkButton = document.getElementById('checkButton');
+
+function validity(form) {
+    // Loop through all inputs
+	for ( var i = 0; i < inputs.length; i++ ) {
+		var input = inputs[i];
+		if ( input.checkValidity() == true ) {
+			checkButton.disabled = false;
+		} else {
+            checkButton.disabled = true;
+        }
+	}
 }
 
 // Date code
