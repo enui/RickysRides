@@ -29,7 +29,7 @@ function date(){
 }
 
 // Event listener
-document.getElementsByClassName("invisible-radio").addEventListener("click", majority(document.bookingForm)); 
+HTMLInputElementObject.addEventListener('input', majority())
 
 // Function boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 function majority(form){
@@ -50,19 +50,24 @@ function majority(form){
             }
         }
         // Extras code
-        if(form.elements[i].className == 'checkbox') {
+        if(form.elements[i].type == 'checkbox') {
+            // If checkbox is ticked runs this
             if(form.elements[i].checked == true) {
-                // Lists off all the extras selected
-                extras += form.elements[i].value + ', ';
-                // Adds price of extras to 'sum' this is later added to the total cost
-                extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
+                // Excludes the term checkbox
+                if(form.elements[i].value != 'terms') {
+                    // Lists off all the extras selected
+                    extras += form.elements[i].value + ', ';
+                    // Adds price of extras to 'sum' this is later added to the total cost
+                    extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
+                }
             }
         }
     }
     // Calculates total cost
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
-    output();
+    // Runs output function
+    output(form);
 }
 
 // Ouput to HTML function
@@ -81,16 +86,17 @@ function output() {
     outputDate.innerHTML = pickUp;
     outputDays.innerHTML = noOfDays + " Days";
     outputVehicle.innerHTML = vehicle;
-    outputPrice.innerHTML = '$' + vehicleCost + " per day"; 
+    outputPrice.innerHTML = '$' + vehicleCost + " per day";
+    outputExtras.innerHTML= '';       
     outputExtras.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
     outputInsurance.innerHTML = '$' + INSURANCE;
-    outputBookingFee.innerHTML = '$' + BOOKINGFEE
+    outputBookingFee.innerHTML = '$' + BOOKINGFEE;
 }
 
 
 // Upload to firebase function
-function upload(form) {
+function upload(form, totalCost, pickUp) {
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;

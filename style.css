@@ -41,12 +41,18 @@ body{
     width: 150px;
 }
 
+input{
+    border: 2px solid #ffffff;
+}
+
 input:required:valid{
-    border: 5px solid blue;
+    box-shadow: 0 0 10px #00ff00;
+    border: 2px solid #00ff00;
 }
 
 input:required:invalid{
-    border: 5px solid black;
+    box-shadow: 0 0 10px #ff0000;
+    border: 2px solid #ff0000;
 }
 
 footer{
@@ -152,9 +158,13 @@ textarea {
     .main{
         width: 95%;
     }
-    
+
     .nav h1{
         width: 100%;
+    }
+
+    #navLogo{
+        display: none;
     }
 
     #constantOutput{
@@ -164,10 +174,17 @@ textarea {
     .car{
         width: 100%;
         padding: 0;  
+        height: 300px;
+        margin: 0;
     }
 
     form{
         padding: 0;
+    }
+
+    textarea {
+        width: 100%;
+        height: 70px;
     }
 }
 
@@ -176,48 +193,4 @@ textarea {
     .main{
         width: 50%;
     }
-}
-
-/* Split screen 1080p / tablet */
-@media only screen and (max-width: 1000px) {
-    .main{
-        width: 90%;
-    }
-
-    .car{
-        width: 35%;
-        height: 300px;
-    }
-}
-
-/* Calendar */
-.ui-datepicker {
-    background: #dfdfd7;
-    font-size: 14px;
-    padding: 10px;
-    border: 2px solid #ffeedd;
-}
-
-.ui-datepicker-prev {
-}
-
-.ui-datepicker-next {
-float:right;
-}
-
-a.ui-state-default:hover{
-    border: 1px solid white;
-    background: #5bfec8;
-    font-weight: bold;
-    color: black;
-}
-
-.ui-datepicker a{
-    color: black;
-}
-
-.ui-datepicker-title {
-    text-align: center;
-    font-weight:bold;
-
 }
