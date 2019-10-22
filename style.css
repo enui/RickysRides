@@ -41,6 +41,14 @@ body{
     width: 150px;
 }
 
+input:required:valid{
+    border: 5px solid blue;
+}
+
+input:required:invalid{
+    border: 5px solid black;
+}
+
 footer{
     background-color: #F25C05;
     height: 200px;
@@ -119,6 +127,10 @@ h3{
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+label {
+    user-select: none;
+}
+
 .invisible-radio:checked + label{
     border: 5px solid #F25C05;
 }
@@ -132,6 +144,8 @@ textarea {
     height: 70px;
     resize: none;
 }
+
+
 
 /* Media query for phones */
 @media only screen and (max-width: 400px) {

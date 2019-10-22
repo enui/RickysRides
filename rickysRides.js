@@ -1,5 +1,7 @@
 // Javascript
 
+date();
+
 // Variables
 var totalCost = 0;
 var INSURANCE = 20;
@@ -8,6 +10,23 @@ var extrasTotal = 0;
 var extras = ' ';
 var pickUp = pickUpDate.value;
 var noOfDays = numberOfDays.value;
+
+// Date code
+function date(){
+    let today = new Date(),
+    day = today.getDate(),
+    month = today.getMonth() + 1,
+    year = today.getFullYear();
+    if (day < 10) {
+        day = '0' + day
+    }
+    if (month < 10) {
+        month = '0' + month
+    }
+    today = year + '-' + month + '-' + day;
+
+    document.getElementById("pickUpDate").setAttribute("min", today);
+}
 
 // Event listener
 document.getElementsByClassName("invisible-radio").addEventListener("click", majority(document.bookingForm)); 
@@ -32,19 +51,18 @@ function majority(form){
         }
         // Extras code
         if(form.elements[i].className == 'checkbox') {
-                if(form.elements[i].checked == true) {
-                    // Lists off all the extras selected
-                    extras += form.elements[i].value + ', ';
-                    // Adds price of extras to 'sum' this is later added to the total cost
-                    extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
-                }
+            if(form.elements[i].checked == true) {
+                // Lists off all the extras selected
+                extras += form.elements[i].value + ', ';
+                // Adds price of extras to 'sum' this is later added to the total cost
+                extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
+            }
         }
     }
     // Calculates total cost
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
     output();
-    upload();
 }
 
 // Ouput to HTML function
@@ -72,7 +90,7 @@ function output() {
 
 
 // Upload to firebase function
-function upload() {
+function upload(form) {
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;
@@ -95,34 +113,3 @@ function upload() {
     }
     bookingRef.push(bookingsEntry);
 }
-
-// // Check validity
-
-// const checkButton = document.getElementById('checkButton');
-
-function validity() {
-    // Loop through all inputs
-	for ( var i = 0; i < inputs.length; i++ ) {
-		var input = inputs[i];
-		if (input.checkValidity() === false ) {
-			checkButton.disabled = false;
-		} else {
-            checkButton.disabled = true;
-        }
-	}
-}
-
-// Date code
-let today = new Date(),
-day = today.getDate(),
-month = today.getMonth() + 1,
-year = today.getFullYear();
-if (day < 10) {
-    day = '0' + day
-}
-if (month < 10) {
-    month = '0' + month
-}
-today = year + '-' + month + '-' + day;
-
-document.getElementById("pickUpDate").setAttribute("min", today);
