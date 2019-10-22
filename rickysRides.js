@@ -1,16 +1,19 @@
 // Javascript
 
+// Variables
+var totalCost = 0;
+var INSURANCE = 20;
+var BOOKINGFEE = 50;
+var extrasTotal = 0;
+var extras = ' ';
+var pickUp = pickUpDate.value;
+var noOfDays = numberOfDays.value;
+
+// Event listener
+document.getElementsByClassName("invisible-radio").addEventListener("click", majority(document.bookingForm)); 
+
 // Function boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 function majority(form){
-    // Variables
-    var totalCost = 0;
-    var INSURANCE = 20;
-    var BOOKINGFEE = 50;
-    var extrasTotal = 0;
-    var extras = ' ';
-    var pickUp = pickUpDate.value;
-    var noOfDays = numberOfDays.value;
-
     // For loop that goes through program looking for radios and checkboxes
     for (var i = 0; i < form.elements.length; i++) {
         // Vehicle selection code
@@ -28,16 +31,24 @@ function majority(form){
             }
         }
         // Extras code
-        if(form.elements[i].type == 'checkbox') {
-            if(form.elements[i].checked == true) {
-                // Lists off all the extras selected
-                extras += form.elements[i].value + ', ';
-                // Adds price of extras to 'sum' this is later added to the total cost
-                extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
-            }
+        if(form.elements[i].className == 'checkbox') {
+                if(form.elements[i].checked == true) {
+                    // Lists off all the extras selected
+                    extras += form.elements[i].value + ', ';
+                    // Adds price of extras to 'sum' this is later added to the total cost
+                    extrasTotal = extrasTotal + parseInt(form.elements[i].dataset.price);
+                }
         }
     }
+    // Calculates total cost
+    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
+    output();
+    upload();
+}
+
+// Ouput to HTML function
+function output() {
     // Vehicle detail outputs
     outputSeats.innerHTML = seats;
     outputStyle.innerHTML = style;
@@ -46,9 +57,6 @@ function majority(form){
     outputEconomy.innerHTML = economy;
     outputFuel.innerHTML = fuel;
     outputTrans.innerHTML = trans;
-
-    // Calculates total cost
-    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
     // Outputs
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
@@ -60,8 +68,11 @@ function majority(form){
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
     outputInsurance.innerHTML = '$' + INSURANCE;
     outputBookingFee.innerHTML = '$' + BOOKINGFEE
+}
 
-    // Upload to firebase
+
+// Upload to firebase function
+function upload() {
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;
@@ -85,32 +96,15 @@ function majority(form){
     bookingRef.push(bookingsEntry);
 }
 
-// // If email valid will allow you to submit form
-// const emailInput = document.getElementById('emailInput');
-// const submitButton = document.getElementById('submitButton');
+// // Check validity
 
+// const checkButton = document.getElementById('checkButton');
 
-// emailInput.addEventListener('keyup', function (validity) {
-//     isValidEmail = emailInput.checkValidity();
-
-//     if (isValidEmail) {
-//         submitButton.disabled = false;
-//     } else{
-//         submitButton.disabled = true;
-//     }
-// })
-
-
-
-// Check validity
-
-const checkButton = document.getElementById('checkButton');
-
-function validity(form) {
+function validity() {
     // Loop through all inputs
 	for ( var i = 0; i < inputs.length; i++ ) {
 		var input = inputs[i];
-		if ( input.checkValidity() == true ) {
+		if (input.checkValidity() === false ) {
 			checkButton.disabled = false;
 		} else {
             checkButton.disabled = true;
