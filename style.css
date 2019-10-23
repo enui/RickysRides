@@ -50,6 +50,10 @@ input:required:invalid{
     border: 2px solid #ff0000;
 }
 
+p{
+    font-size: 1.25rem;
+}
+
 footer{
     background-color: #F25C05;
     height: 200px;
@@ -94,7 +98,19 @@ h3{
     font-family: sans-serif;    
     padding: 0;
     margin: 0;
+    
+}
 
+label {
+    user-select: none;
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+td{
+    font-size: 1.3rem;
 }
 
 .car{
@@ -128,9 +144,6 @@ h3{
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-label {
-    user-select: none;
-}
 
 .invisible-radio:checked + label{
     border: 5px solid #F25C05;

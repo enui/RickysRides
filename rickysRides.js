@@ -1,6 +1,9 @@
 // Javascript
+// Run date function at start to prevent user entering past date
+dateFunction();
 
-date();
+// Event listeners
+document.getElementsByClassName("vehicle").addEventListener("radioStateChange", vehicleSelection()); 
 
 // Variables
 var totalCost = 0;
@@ -11,30 +14,8 @@ var extras = ' ';
 var pickUp = pickUpDate.value;
 var noOfDays = numberOfDays.value;
 
-// Date code
-function date(){
-    let today = new Date(),
-    day = today.getDate(),
-    month = today.getMonth() + 1,
-    year = today.getFullYear();
-    if (day < 10) {
-        day = '0' + day
-    }
-    if (month < 10) {
-        month = '0' + month
-    }
-    today = year + '-' + month + '-' + day;
-
-    document.getElementById("pickUpDate").setAttribute("min", today);
-}
-
-// Event listener
-HTMLInputElementObject.addEventListener('input', majority())
-
-// Function boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-function majority(form){
-    extras =" ";
-    extrasTotal= 0;
+// Vehicle selection function
+function vehicleSelection(form){
     // For loop that goes through program looking for radios and checkboxes
     for (var i = 0; i < form.elements.length; i++) {
         // Vehicle selection code
@@ -51,7 +32,24 @@ function majority(form){
                 trans = form.elements[i].dataset.trans;
             }
         }
-        // Extras code
+    }
+    // Vehicle detail outputs
+    outputSeats.innerHTML = seats;
+    outputStyle.innerHTML = style;
+    outputLuggage.innerHTML = luggage;
+    outputEngine.innerHTML = engine;
+    outputEconomy.innerHTML = economy;
+    outputFuel.innerHTML = fuel;
+    outputTrans.innerHTML = trans;
+}
+
+// Function to calculate extras
+function extraSelection(form){
+    extras =" ";
+    extrasTotal= 0;
+    // For loop that goes through program looking for radios and checkboxes
+    for (var i = 0; i < form.elements.length; i++) {
+        // Looks for checkboxes
         if(form.elements[i].type == 'checkbox') {
             // If checkbox is ticked runs this
             if(form.elements[i].checked == true) {
@@ -65,38 +63,40 @@ function majority(form){
             }
         }
     }
-
-    // Calculates total cost
-    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
-
-    // Runs output function
-    output(form);
-}
-
-// Ouput to HTML function
-function output() {
-    // Vehicle detail outputs
-    outputSeats.innerHTML = seats;
-    outputStyle.innerHTML = style;
-    outputLuggage.innerHTML = luggage;
-    outputEngine.innerHTML = engine;
-    outputEconomy.innerHTML = economy;
-    outputFuel.innerHTML = fuel;
-    outputTrans.innerHTML = trans;
-
-    // Outputs
-    outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
-    outputDate.innerHTML = pickUp;
-    outputDays.innerHTML = noOfDays + " Days";
-    outputVehicle.innerHTML = vehicle;
-    outputPrice.innerHTML = '$' + vehicleCost + " per day";
-    outputExtras.innerHTML= '';       
     outputExtras.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
+}
+
+// Date function that prevents user from entering past dates
+function dateFunction(){
+    let today = new Date(),
+    day = today.getDate(),
+    month = today.getMonth() + 1,
+    year = today.getFullYear();
+    if (day < 10) {
+        day = '0' + day
+    }
+    if (month < 10) {
+        month = '0' + month
+    }
+    today = year + '-' + month + '-' + day;
+
+    document.getElementById("pickUpDate").setAttribute("min", today);
+
+    outputDate.innerHTML = pickUp;
+    outputDays.innerHTML = noOfDays + " Days";
+}
+
+// Details function
+function details(form) {
+    // Calculates total cost
+    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
+    outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
+    outputVehicle.innerHTML = vehicle;
+    outputPrice.innerHTML = '$' + vehicleCost + " per day";    
     outputInsurance.innerHTML = '$' + INSURANCE;
     outputBookingFee.innerHTML = '$' + BOOKINGFEE;
 }
-
 
 // Upload to firebase function
 function upload(form) {
