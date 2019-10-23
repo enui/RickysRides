@@ -2,6 +2,7 @@
 
 html{
     background-color: #dfdfd7;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -11,7 +12,7 @@ body{
 }
 
 .main{
-    width: 65%;
+    width: 55%;
     margin: auto;
 }
 
@@ -50,8 +51,14 @@ input:required:invalid{
     border: 2px solid #ff0000;
 }
 
-p{
-    font-size: 1.25rem;
+/* Box on left that displays what you've selected */
+#sideOutput{
+    float: left;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 5px 5px 5px 4px #afafaf;
+    margin: 0 0 0 30px;
+    width: 320px;
 }
 
 footer{
@@ -105,16 +112,8 @@ label {
     user-select: none;
 }
 
-input {
-    font-size: 1.1rem;
-}
-
-td{
-    font-size: 1.3rem;
-}
-
 .car{
-    width: 250px;
+    width: 20%;
     height: 270px;
     display: inline-block;
     background-color: #eceaea;

@@ -3,7 +3,17 @@
 dateFunction();
 
 // Event listeners
-document.getElementsByClassName("vehicle").addEventListener("radioStateChange", vehicleSelection()); 
+var parent = document.querySelector("#bookingForm");
+parent.addEventListener("click", master, false);
+ 
+function master(e) {
+    if (e.target !== e.currentTarget) {
+        vehicleSelection();
+        extraSelection();
+        details();
+    }
+    e.stopPropagation();
+}
 
 // Variables
 var totalCost = 0;
@@ -41,6 +51,7 @@ function vehicleSelection(form){
     outputEconomy.innerHTML = economy;
     outputFuel.innerHTML = fuel;
     outputTrans.innerHTML = trans;
+    details(form);
 }
 
 // Function to calculate extras
@@ -65,6 +76,8 @@ function extraSelection(form){
     }
     outputExtras.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
+
+    details(form);
 }
 
 // Date function that prevents user from entering past dates
@@ -82,20 +95,19 @@ function dateFunction(){
     today = year + '-' + month + '-' + day;
 
     document.getElementById("pickUpDate").setAttribute("min", today);
-
-    outputDate.innerHTML = pickUp;
-    outputDays.innerHTML = noOfDays + " Days";
 }
 
 // Details function
 function details(form) {
     // Calculates total cost
-    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
     outputVehicle.innerHTML = vehicle;
     outputPrice.innerHTML = '$' + vehicleCost + " per day";    
     outputInsurance.innerHTML = '$' + INSURANCE;
     outputBookingFee.innerHTML = '$' + BOOKINGFEE;
+    outputDate.innerHTML = pickUp;
+    outputDays.innerHTML = noOfDays + " Days";
+    totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 }
 
 // Upload to firebase function
@@ -121,4 +133,18 @@ function upload(form) {
         comment: comment
     }
     bookingRef.push(bookingsEntry);
+}
+
+// This function deals with validation of the form fields
+function functionnn() {
+    var test = document.getElementsByClassName('required');
+    for (i = 0; i < test.length; i++) {
+        if (!test[i].checkValidity()) {
+            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+        }
+    }
 }
