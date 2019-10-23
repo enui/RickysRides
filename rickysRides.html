@@ -29,7 +29,7 @@
         <form id="bookingForm" name="bookingForm">
             <!-- Radios -->
             <div class="card" id="radios">
-                <h2>Vehicle:</h2><br>
+                <h2>Select a Vehicle:</h2><br>
 
                 <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="majority(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
                 <label class="car" for="tiida">
@@ -144,28 +144,28 @@
 
             <!-- Options -->
             <div class="card" id="options">
-                <h2>Options:</h2><br>
-                <label><input class="option-input checkbox" data-price="90" type="checkbox" value="Roof Racks">Roof Racks</label><br>
-                <label><input class="option-input checkbox" data-price="60" type="checkbox" value="Snow Chains">Snow Chains</label><br>
-                <label><input class="option-input checkbox" data-price="35" type="checkbox" value="GPS">GPS</label><br>
-                <label><input class="option-input checkbox" data-price="120" type="checkbox" value="Bike Rack">Bike Rack</label><br>
-                <label><input class="option-input checkbox" data-price="50" type="checkbox" value="Booster Seat">Child Booster Seat</label><br>
+                <h2>Select any Options:</h2><br>
+                <label><input class="option-input checkbox" data-price="90" type="checkbox" value="Roof Racks">Roof Racks - $90</label><br>
+                <label><input class="option-input checkbox" data-price="60" type="checkbox" value="Snow Chains">Snow Chains - $60</label><br>
+                <label><input class="option-input checkbox" data-price="35" type="checkbox" value="GPS">GPS - $35</label><br>
+                <label><input class="option-input checkbox" data-price="120" type="checkbox" value="Bike Rack">Bike Rack (Max 3 bikes) - $120</label><br>
+                <label><input class="option-input checkbox" data-price="50" type="checkbox" value="Booster Seat">Child Booster Seat - $50</label><br>
             </div>
 
             <br><br>
 
             <!-- Date/nights -->
             <div class="card" id="dates">
-                <h2>Date:</h2><br>
+                <h2>Select a Date:</h2><br>
                 <label>Pick up date: </label> <input id="pickUpDate" type="date" required><br><br>
-                <label>Number of days (Max 14): </label> <input id="numberOfDays" type="number" min="1" max="14" required>
+                <label>Number of days (Max 14):</label> <input id="numberOfDays" type="number" min="1" max="14" required>
             </div>
             
             <br><br>
 
             <!-- Details -->
             <div class="card" class="card" id="details">
-                <h2>Details:</h2><br>
+                <h2>Enter your Details:</h2><br>
                 <label>Age: </label><input autocomplete="on" id="ageInput" placeholder="18" required title="Enter your age" type="number" min="18" max="100"><br><br>
                 <label>First name: </label><input autocomplete="on" id="firstNameInput" placeholder="John" required title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
                 <label>Last name: </label><input autocomplete="on" id="lastNameInput" placeholder="Smith" required title="Enter your last name" type="text" pattern="[A-Za-z]{2,}"><br><br>
@@ -179,7 +179,7 @@
 
             <!-- Booking summary -->
             <div class="card" id="booking">    
-                <h2>Booking Summary</h2><br>
+                <h2>Booking Summary:</h2><br>
                 <table>
                     <tr>
                         <td>Pick up date:</td>
@@ -258,7 +258,7 @@
 
                 <!-- Submit and reset button -->
                 <button id="submitButton" onclick="upload(document.bookingForm)" type="submit">Submit</button>
-                <button id="resetButton" type="reset">Reset</button>
+                <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
                 
             </div>
         </form>
@@ -267,9 +267,9 @@
     <footer>
         <div class="main">
             <h2>Contact details:</h2>
-            <p>Email address: </p>
-            <p>Phone number: </p>
-            <p>Address: </p>
+            <p><b>Phone number:</b> 03 4775277</p>
+            <p><b>Email address:</b> rickysrides@gmail.com</p>
+            <p><b>Address:</b> 2 Arthur Street Dunedin</p>
         </div>
     </footer>
 

@@ -42,12 +42,7 @@ body{
 }
 
 input{
-    border: 2px solid #ffffff;
-}
-
-input:required:valid{
-    box-shadow: 0 0 10px #00ff00;
-    border: 2px solid #00ff00;
+    border: 1px solid #000000;
 }
 
 input:required:invalid{
@@ -175,7 +170,7 @@ textarea {
         width: 100%;
         padding: 0;  
         height: 300px;
-        margin: 0;
+        margin: 20px 0 0 0;
     }
 
     form{

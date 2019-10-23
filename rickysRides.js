@@ -33,6 +33,8 @@ HTMLInputElementObject.addEventListener('input', majority())
 
 // Function boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 function majority(form){
+    extras =" ";
+    extrasTotal= 0;
     // For loop that goes through program looking for radios and checkboxes
     for (var i = 0; i < form.elements.length; i++) {
         // Vehicle selection code
@@ -63,6 +65,7 @@ function majority(form){
             }
         }
     }
+
     // Calculates total cost
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
@@ -96,7 +99,7 @@ function output() {
 
 
 // Upload to firebase function
-function upload(form, totalCost, pickUp) {
+function upload(form) {
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;
