@@ -1,5 +1,7 @@
 // Javascript
 
+document.getElementById("submitButton").disabled = true;
+
 let today = new Date(),
     day = today.getDate(),
     month = today.getMonth() + 1,
@@ -129,14 +131,20 @@ function upload(form) {
 
 // This function deals with validation of the form fields
 function functionnn(form) {
-    var test = document.getElementsByClassName('required');
+    var test = false;
+    test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
-        if (!test[i].checkValidity()) {
-            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
-            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
-            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
-            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
-            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+        if (test[i].checkValidity()) {
+            document.getElementById("submitButton").disabled = false;
+
+            if (!test[i].checkValidity() || test[i].value.trim() == "" ) {
+                document.getElementById("submitButton").disabled = true;
+                document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+                document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+                document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+                document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+                document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+            } 
         }
     }
 }

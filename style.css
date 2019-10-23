@@ -1,27 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo|Roboto|Montserrat&display=swap');
 
+/* HTMl/Whole page */
 html{
     background-color: #dfdfd7;
     scroll-behavior: smooth;
 }
 
+/* Body */
 body{
     padding: 0;
     margin: 0;
     font-family: montserrat;
 }
 
+/* Centers all my content */
 .main{
     width: 55%;
     margin: auto;
 }
 
+/* Nav bar */
 .nav{
     background-color: #F25C05;
     height: 100px;
     box-shadow: 0px 5px 3px #afafaf;
 }
 
+/* Nav heading */
 .nav h1{
     width: 500px;
     float: left;
@@ -29,6 +34,7 @@ body{
     margin-top: 17px;  
 }
 
+/* Container for my nav logo image */
 #navLogo{
     float: right;
     margin-right: 5%;
@@ -37,15 +43,18 @@ body{
     box-shadow: 0px 5px 3px #afafaf;
 }
 
+/* Image in my nav bar */
 #navLogo img{
     margin-top: 5%;
     width: 150px;
 }
 
+/* Inputs */
 input{
     border: 1px solid #000000;
 }
 
+/* Invalid inputs */
 input:required:invalid{
     box-shadow: 0 0 10px #ff0000;
     border: 2px solid #ff0000;
@@ -61,31 +70,32 @@ input:required:invalid{
     width: 320px;
 }
 
+/* Footer */
 footer{
     background-color: #F25C05;
     height: 200px;
     color: #afafaf;
 }
 
+/* Footer heading */
 footer h2{
     color: #ffffff;
     padding:  20px 0px 20px 0px;
 }
 
+/* Footer text */
 footer p{
     color: #ffffff;
 }
 
-#vehicles{
-    margin: 20px 0 0 0;
-}
-
+/* Different sections of my code */
 .card{
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 5px 5px 5px 4px #afafaf;
 }
 
+/* Main headings such as title */
 h1{
     font-family: arvo;
     margin: 0;
@@ -93,6 +103,7 @@ h1{
     font-size: 48px;
 }
 
+/* Card headings */
 h2{
     font-family: arvo;
     font-size: 3 rem;
@@ -101,6 +112,7 @@ h2{
     padding: 0;
 }
 
+/* Sub headings */
 h3{
     font-family: sans-serif;    
     padding: 0;
@@ -108,6 +120,7 @@ h3{
     
 }
 
+/* Labels */
 label {
     user-select: none;
 }
@@ -160,6 +173,15 @@ textarea {
     resize: none;
 }
 
+.errorMessage{
+    display: inline-block;
+
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 /* Buttons at the end to submit and reset container */
 #buttons{
     margin: auto;
@@ -175,6 +197,11 @@ textarea {
     font-family: roboto;
     font-size: 14px; 
     font-weight: bold;   
+}
+
+#submitButton:disabled {
+    background-color: #333333;
+    border: 2px solid #333333;
 }
 
 /* Reset button */
