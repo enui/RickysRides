@@ -1,6 +1,18 @@
 // Javascript
-// Run date function at start to prevent user entering past date
-dateFunction();
+
+let today = new Date(),
+    day = today.getDate(),
+    month = today.getMonth() + 1,
+    year = today.getFullYear();
+    if (day < 10) {
+        day = '0' + day
+    }
+    if (month < 10) {
+        month = '0' + month
+    }
+    today = year + '-' + month + '-' + day;
+
+    document.getElementById("pickUpDate").setAttribute("min", today);
 
 // Event listeners
 var parent = document.querySelector("#bookingForm");
@@ -51,7 +63,6 @@ function vehicleSelection(form){
     outputEconomy.innerHTML = economy;
     outputFuel.innerHTML = fuel;
     outputTrans.innerHTML = trans;
-    details(form);
 }
 
 // Function to calculate extras
@@ -74,27 +85,6 @@ function extraSelection(form){
             }
         }
     }
-    outputExtras.innerHTML = extras;
-    outputExtrasTotal.innerHTML = '$' + extrasTotal;
-
-    details(form);
-}
-
-// Date function that prevents user from entering past dates
-function dateFunction(){
-    let today = new Date(),
-    day = today.getDate(),
-    month = today.getMonth() + 1,
-    year = today.getFullYear();
-    if (day < 10) {
-        day = '0' + day
-    }
-    if (month < 10) {
-        month = '0' + month
-    }
-    today = year + '-' + month + '-' + day;
-
-    document.getElementById("pickUpDate").setAttribute("min", today);
 }
 
 // Details function
@@ -107,6 +97,8 @@ function details(form) {
     outputBookingFee.innerHTML = '$' + BOOKINGFEE;
     outputDate.innerHTML = pickUp;
     outputDays.innerHTML = noOfDays + " Days";
+    outputExtras.innerHTML = extras;
+    outputExtrasTotal.innerHTML = '$' + extrasTotal;
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 }
 
@@ -136,7 +128,7 @@ function upload(form) {
 }
 
 // This function deals with validation of the form fields
-function functionnn() {
+function functionnn(form) {
     var test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
         if (!test[i].checkValidity()) {
