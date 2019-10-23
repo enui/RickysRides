@@ -7,6 +7,7 @@ var INSURANCE = 20;
 var BOOKINGFEE = 50;
 var extrasTotal = 0;
 var extras = ' ';
+var pickUp, noOfDays;
 
 // Vehicle selection function
 function vehicleSelection(form){
@@ -61,17 +62,14 @@ function extraSelection(form){
         }
     }
     outputExtras.innerHTML = extras;
-    mobileOutputExtras.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
-    mobileOutputExtrasTotal.innerHTML = '$' + extrasTotal;
 
-    details();
 }
 
 // Details function
 function details(form) {
-    var pickUp = pickUpDate.value;
-    var noOfDays = numberOfDays.value;
+    pickUp = pickUpDate.value;
+    noOfDays = numberOfDays.value;
 
     // Calculates total cost
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
@@ -83,11 +81,12 @@ function details(form) {
     outputDays.innerHTML = noOfDays + " Days";
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
 
-    functionnn();
+    validityChecker();
 }
 
 // Upload to firebase function
 function upload(form) {
+    console.log(totalCost);
     var database = firebase.database();
     var bookingRef = database.ref('bookings');
     var firstName = firstNameInput.value;
@@ -112,14 +111,15 @@ function upload(form) {
 }
 
 // This function deals with validation of the form fields
-function functionnn(form) {
+function validityChecker(form) {
     var test = false;
     test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
         if (test[i].checkValidity()) {
-            document.getElementById("submitButton").disabled = false;
-
-            if (!test[i].checkValidity() || test[i].value.trim() == "" ) {
+            if (document.getElementById('terms').checked == true) {
+                document.getElementById("submitButton").disabled = false;
+            }
+            if (!test[i].checkValidity() || test[i].value.trim() == "" || document.getElementById('terms').checked == false) {
                 document.getElementById("submitButton").disabled = true;
                 document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
                 document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
@@ -152,18 +152,7 @@ document.getElementById("defaultOpen").click();
 
 
 
-// Event listeners
-var parent = document.querySelector("#bookingForm");
-parent.addEventListener("click", master, false);
- 
-function master(e) {
-    if (e.target !== e.currentTarget) {
-        vehicleSelection();
-        extraSelection();
-        details();
-    }
-    e.stopPropagation();
-}
+
 
 document.getElementById("submitButton").disabled = true;
 
