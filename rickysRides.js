@@ -1,33 +1,5 @@
 // Javascript
-
-document.getElementById("submitButton").disabled = true;
-
-let today = new Date(),
-    day = today.getDate(),
-    month = today.getMonth() + 1,
-    year = today.getFullYear();
-    if (day < 10) {
-        day = '0' + day
-    }
-    if (month < 10) {
-        month = '0' + month
-    }
-    today = year + '-' + month + '-' + day;
-
-    document.getElementById("pickUpDate").setAttribute("min", today);
-
-// Event listeners
-var parent = document.querySelector("#bookingForm");
-parent.addEventListener("click", master, false);
- 
-function master(e) {
-    if (e.target !== e.currentTarget) {
-        vehicleSelection();
-        extraSelection();
-        details();
-    }
-    e.stopPropagation();
-}
+date();
 
 // Variables
 var totalCost = 0;
@@ -35,8 +7,6 @@ var INSURANCE = 20;
 var BOOKINGFEE = 50;
 var extrasTotal = 0;
 var extras = ' ';
-var pickUp = pickUpDate.value;
-var noOfDays = numberOfDays.value;
 
 // Vehicle selection function
 function vehicleSelection(form){
@@ -66,6 +36,8 @@ function vehicleSelection(form){
     outputEconomy.innerHTML = economy;
     outputFuel.innerHTML = fuel;
     outputTrans.innerHTML = trans;
+
+    details();
 }
 
 // Function to calculate extras
@@ -88,10 +60,19 @@ function extraSelection(form){
             }
         }
     }
+    outputExtras.innerHTML = extras;
+    mobileOutputExtras.innerHTML = extras;
+    outputExtrasTotal.innerHTML = '$' + extrasTotal;
+    mobileOutputExtrasTotal.innerHTML = '$' + extrasTotal;
+
+    details();
 }
 
 // Details function
 function details(form) {
+    var pickUp = pickUpDate.value;
+    var noOfDays = numberOfDays.value;
+
     // Calculates total cost
     outputCost.innerHTML = '<b>' + '$' + totalCost + '</b>';
     outputVehicle.innerHTML = vehicle;
@@ -100,9 +81,9 @@ function details(form) {
     outputBookingFee.innerHTML = '$' + BOOKINGFEE;
     outputDate.innerHTML = pickUp;
     outputDays.innerHTML = noOfDays + " Days";
-    outputExtras.innerHTML = extras;
-    outputExtrasTotal.innerHTML = '$' + extrasTotal;
     totalCost = extrasTotal + parseInt(vehicleCost * noOfDays) + parseInt(INSURANCE * noOfDays) + BOOKINGFEE;
+
+    functionnn();
 }
 
 // Upload to firebase function
@@ -168,3 +149,36 @@ function tabSwitch(evt, tabName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+
+// Event listeners
+var parent = document.querySelector("#bookingForm");
+parent.addEventListener("click", master, false);
+ 
+function master(e) {
+    if (e.target !== e.currentTarget) {
+        vehicleSelection();
+        extraSelection();
+        details();
+    }
+    e.stopPropagation();
+}
+
+document.getElementById("submitButton").disabled = true;
+
+function date(){
+    let today = new Date(),
+        day = today.getDate(),
+        month = today.getMonth() + 1,
+        year = today.getFullYear();
+        if (day < 10) {
+            day = '0' + day
+        }
+        if (month < 10) {
+            month = '0' + month
+        }
+        today = year + '-' + month + '-' + day;
+
+    document.getElementById("pickUpDate").setAttribute("min", today);
+}
