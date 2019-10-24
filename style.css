@@ -62,7 +62,7 @@ input:required:invalid{
 
 /* Box on left that displays what you've selected */
 #sideOutput{
-    position: fixed;
+    position: absolute;
     right: 20px;
     background-color: #ffffff;
     padding: 20px;
@@ -73,16 +73,19 @@ input:required:invalid{
 
 /* Footer */
 footer{
-    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #F25C05;
     color: #afafaf;
+    padding: 0 0 10px 0;
+    position: absolute;
+
 }
 
 /* Footer heading */
 footer h2{
     color: #ffffff;
+    padding: 10px 0 0 0;
 }
 
 /* Footer text */
@@ -125,6 +128,13 @@ h3{
 /* Labels */
 label {
     user-select: none;
+}
+
+#details input{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: montserrat;
 }
 
 /* Vehicle cards */
@@ -213,12 +223,12 @@ button:hover{
 #submitButton{
     background-color: #00ff00;
     border: 2px solid #15b300;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px;
     font-family: roboto;
-    font-size: 14px; 
-    font-weight: bold;
-    margin-right: 10px;
+    font-size: 16px; 
+    margin-left: 10px;
+
 }
 
 #submitButton:disabled {
@@ -230,12 +240,12 @@ button:hover{
 #resetButton{
     background-color: #ff0000;
     border: 2px solid #ff0000;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px;
     font-family: roboto;
     color: #ffffff;
-    font-size: 14px;  
-    margin-left: 10px;
+    font-size: 16px;  
+    margin-right: 10px;
 }
 
 
@@ -283,7 +293,7 @@ button:hover{
     }
 
     footer h2{
-        padding: 10px 0 10px 0;
+        margin: 20px 0 10px 0;
     }
 }
 

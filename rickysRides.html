@@ -24,6 +24,7 @@
 
     <br><br>
 
+    <!-- Side navigation tabs -->
     <div class="tab">
         <button class="tablinks" onclick="tabSwitch(event, 'vehicleRadios')" id="defaultOpen">Vehicle</button>
         <button class="tablinks" onclick="tabSwitch(event, 'options')">Extras</button>
@@ -94,6 +95,20 @@
                         <div id="outputTrans"></div>
                     </td>
                 </tr>
+                <tr>
+                    <td>Extras:</td>
+                    <td></td>
+                    <td>
+                        <div id="outputExtrasSide"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Extras total:</td>
+                    <td></td>
+                    <td>
+                        <div id="outputExtrasTotalSide"></div>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>
@@ -108,50 +123,50 @@
                     <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
                     <label class="car" for="tiida">
                         <h3>Nissan Tiida</h3>
-                        <p>$18 per day</p>
                         <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
+                        <p>$18 per day</p>
                     </label>
 
                     <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
                     <label class="car" for="swift">
                         <h3>Suzuki Swift</h3>
-                        <p>$18 per day</p>
                         <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
+                        <p><b>$18 per day</b></p>
                     </label>
 
                 <input class="invisible-radio" id="captiva" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
                 <label class="car" for="captiva">
                     <h3>Holden Captiva</h3>
-                    <p>$52 per day</p>
                     <img src="images\holdenCaptiva.png" alt="Holden Captiva" title="Holden Captiva">
+                    <p>$52 per day</p>
                 </label>
 
                 <input class="invisible-radio" id="trax" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
                 <label class="car" for="trax">
                     <h3>Holden Trax</h3>
-                    <p>$41 per day</p>
                     <img src="images\holdenTrax.png" alt="Holden Trax" title="Holden Trax">
+                    <p>$41 per day</p>
                 </label>
 
                 <input class="invisible-radio" id="mazda" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="23" data-seats="5" data-style="5 door hatch/wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
                 <label class="car" for="mazda">
                     <h3>Mazda 3</h3>
-                    <p>$23 per day</p>
                     <img src="images\mazda3.png" alt="Mazda 3" title="Mazda 3">
+                    <p>$23 per day</p>
                 </label>
 
                 <input class="invisible-radio" id="caravan" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
                 <label class="car" for="caravan">
                     <h3>Nissan Caravan</h3>
-                    <p>$89 per day</p>
                     <img src="images\nissanCaravan.png" alt="Nissan Caravan" title="Nissan Caravan">
+                    <p>$89 per day</p>
                 </label>
                 
                 <input class="invisible-radio" id="estima" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
                 <label class="car" for="estima">
                     <h3>Toyota Estima</h3>
-                    <p>$62 per day</p>
                     <img src="images\toyotaEstima.png" alt="Toyota Estima" title="Toyota Estima">
+                    <p>$62 per day</p>
                 </label>
 
                 <br><br>
@@ -203,37 +218,36 @@
             <div class="card tabcontent" id="details">
                 <h2>Enter your Details:</h2><br>
                 
-                <ul>
                     <label>Pick up date: </label>
-                    <input class="required" id="pickUpDate" type="date" onchange="details()" ><br><br>
+                    <input class="required" id="pickUpDate" type="date" onblur="details()" ><br><br>
+                    <div class="errorMessage" id="dateInvalid"></div>
 
                     <label>Number of days (Max 14):</label>
                     <input class="required" id="numberOfDays" type="number" onblur="details()" min="1" max="14" ><br><br>
-
+                    <div class="errorMessage" id="daysInvalid"></div>
                     
                     <label for="firstNameInput">First name: </label>
-                    <input class="required" autocomplete="on" id="firstNameInput" oninput="details()" placeholder="John"  title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
+                    <input class="required" autocomplete="on" id="firstNameInput" onblur="details()" placeholder="John"  title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
                     <div class="errorMessage" id="firstNameInvalid"></div>
 
                     <label>Last name: </label>
-                    <input class="required" autocomplete="on" id="lastNameInput"oninput="details()" placeholder="Smith"  title="Enter your last name" type="text" pattern="[A-Za-z ]{2,}"><br><br>
+                    <input class="required" autocomplete="on" id="lastNameInput"onblur="details()" placeholder="Smith"  title="Enter your last name" type="text" pattern="[A-Za-z ]{2,}"><br><br>
                     <div class="errorMessage" id="lastNameInvalid"></div>
                     
                     <label>Cellphone: </label>
-                    <input class="required" autocomplete="on" id="phoneNumberInput" oninput="details()" placeholder="0225020050"  title="Enter your cellphone number" type="tel" pattern="[+0-9 ]{9,13}"><br><br>
+                    <input class="required" autocomplete="on" id="phoneNumberInput" onblur="details()" placeholder="0225020050"  title="Enter your cellphone number" type="tel" pattern="[+0-9 ]{9,13}"><br><br>
                     <div class="e   rrorMessage" id="phoneNumberInvalid"></div>
                     
                     <label>Email address: </label>
-                    <input class="required" autocomplete="on" id="emailInput" oninput="details()" placeholer="ethanw.17167@obhs.school.nz"  title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
+                    <input class="required" autocomplete="on" id="emailInput" onblur="details()" placeholer="ethanw.17167@obhs.school.nz"  title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
                     <div class="errorMessage" id="emailInvalid"></div>
                     
                     <label>Age: </label>
-                    <input class="required" autocomplete="on" id="ageInput" oninput="details()" placeholder="18"  title="Enter your age" type="number" min="18" max="100" pattern="[1-9]"><br><br>
+                    <input class="required" autocomplete="on" id="ageInput" onblur="details()" placeholder="18"  title="Enter your age" type="number" min="18" max="100" pattern="[1-9]"><br><br>
                     <div class="errorMessage" id="ageInvalid"></div>
                     
                     <label>Comments: </label><br>
                     <textarea id="commentInput" placeholder="Please enter any comments"></textarea>
-                </ul>
                 
                 <br><br>
 
@@ -322,18 +336,26 @@
                         <input onclick="validityChecker()" type="checkbox" id="terms" value="terms" required><label for="terms"> Accept terms and conditions</label>
                         <span class="checkmark"></span>
                     </label><br>
-        
+                    
+                    <div class="buttons">
+                        <button class="nextButtons" onclick="tabSwitch(event, 'details')">Previous</button>
+                    </div>
+
+                    <br><br>
+                    
                     <!-- Submit and reset button -->
                     <div class="buttons">
-                        <button id="submitButton" onclick="upload()" type="button">Submit</button>
                         <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
+                        <button id="submitButton" onclick="upload()" type="button">Submit</button>
                     </div>
             </div>
 
-            <!-- Booking summary -->
-            <div class="card tabcontent" id="bookingConfirmation">    
-                <h2>Booking confirmation:</h2><br>
-
+            <!-- Booking confirmation -->
+            <div class="card tabcontent" id="bookingConfirmed">    
+                <h2>Booking confirmed</h2><br>
+                <p>
+                    Your booking has been confirmed. Expect an email soon.
+                </p>
             </div>
     </form>
         <br><br>
@@ -341,9 +363,11 @@
     <footer>
         <div class="main">
             <h2>Contact details:</h2>
-            <p><b>Phone number:</b> 03 4775277</p>
-            <p><b>Email address:</b> rickysrides@gmail.com</p>
-            <p><b>Address:</b> 2 Arthur Street Dunedin</p>   
+            <p>
+                <b>Phone number:</b> 03 4775277<br>
+                <b>Email address:</b> rickysrides@gmail.com<br>
+                <b>Address:</b> 2 Arthur Street Dunedin
+            </p>   
         </div>
     </footer>
 

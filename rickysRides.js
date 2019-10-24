@@ -11,8 +11,9 @@ var pickUp, noOfDays;
 
 // Vehicle selection function
 function vehicleSelection(form){
+    var i;
     // For loop that goes through program looking for radios and checkboxes
-    for (var i = 0; i < form.elements.length; i++) {
+    for (i = 0; i < form.elements.length; i++) {
         // Vehicle selection code
         if (form.elements[i].type == 'radio') {
             if (form.elements[i].checked == true) {
@@ -62,8 +63,9 @@ function extraSelection(form){
         }
     }
     outputExtras.innerHTML = extras;
+    outputExtrasSide.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
-
+    outputExtrasTotalSide.innerHTML = '$' + extrasTotal;
 }
 
 // Details function
@@ -108,25 +110,29 @@ function upload(form) {
         comment: comment
     }
     bookingRef.push(bookingsEntry);
+    // Switches to the booking confirmation page
+    tabSwitch(event, 'bookingConfirmed');
 }
 
 // This function deals with validation of the form fields
 function validityChecker(form) {
     var test = false;
+    // Gets all elements with the class required
     test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
         if (test[i].checkValidity()) {
-            if (document.getElementById('terms').checked == true) {
-                document.getElementById("submitButton").disabled = false;
-            }
-            if (!test[i].checkValidity() || test[i].value.trim() == "" || document.getElementById('terms').checked == false) {
+            if (!test[i].checkValidity() || test[i].value.trim() == null || document.getElementById('terms').checked == false) {
                 document.getElementById("submitButton").disabled = true;
+                document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
+                document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
                 document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
                 document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
                 document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
                 document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
                 document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
-            } 
+            } else {
+                document.getElementById("submitButton").disabled = false;
+            }   
         }
     }
 }
@@ -149,11 +155,6 @@ function tabSwitch(evt, tabName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
-
-
-
-
 document.getElementById("submitButton").disabled = true;
 
 function date(){
