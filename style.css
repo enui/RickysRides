@@ -5,6 +5,7 @@ html {
 	background-color: #dfdfd7;
 	scroll-behavior: smooth;
 }
+
 /* Body */
 
 body {
@@ -12,12 +13,14 @@ body {
 	margin: 0;
 	font-family: montserrat;
 }
+
 /* Centers all my content */
 
 .main {
 	width: 55%;
 	margin: auto;
 }
+
 /* Nav bar */
 
 .nav {
@@ -25,6 +28,7 @@ body {
 	height: 100px;
 	box-shadow: 0px 5px 3px #afafaf;
 }
+
 /* Nav heading */
 
 .nav h1 {
@@ -33,6 +37,7 @@ body {
 	color: #ffffff;
 	margin-top: 17px;
 }
+
 /* Container for my nav logo image */
 
 #navLogo {
@@ -42,23 +47,27 @@ body {
 	height: 150px;
 	box-shadow: 0px 5px 3px #afafaf;
 }
+
 /* Image in my nav bar */
 
 #navLogo img {
 	margin-top: 5%;
 	width: 150px;
 }
+
 /* Inputs */
 
 input {
 	border: 1px solid #000000;
 }
+
 /* Invalid inputs */
 
 input:required:invalid {
 	box-shadow: 0 0 10px #ff0000;
 	border: 2px solid #ff0000;
 }
+
 /* Box on left that displays what you've selected */
 
 #sideOutput {
@@ -71,6 +80,7 @@ input:required:invalid {
 	display: block;
 	top: 140px;
 }
+
 /* Footer */
 
 footer {
@@ -81,18 +91,21 @@ footer {
 	padding: 0 0 10px 0;
 	position: absolute;
 }
+
 /* Footer heading */
 
 footer h2 {
 	color: #ffffff;
 	padding: 10px 0 0 0;
 }
+
 /* Footer text */
 
 footer p {
 	color: #ffffff;
 	line-height: 20px;
 }
+
 /* Different sections of my code */
 
 .card {
@@ -100,6 +113,7 @@ footer p {
 	padding: 20px;
 	box-shadow: 5px 5px 5px 4px #afafaf;
 }
+
 /* Main headings such as title */
 
 h1 {
@@ -108,14 +122,15 @@ h1 {
 	color: #DFDFD7;
 	font-size: 48px;
 }
+
 /* Card headings */
 
 h2 {
 	font-family: arvo;
 	margin: 0;
-	color: #000000;
 	padding: 0;
 }
+
 /* Sub headings */
 
 h3 {
@@ -123,11 +138,18 @@ h3 {
 	padding: 0;
 	margin: 0;
 }
+
 /* Labels */
 
 label {
 	user-select: none;
+	font-family: montserrat;
+	margin: 0;
+	color: #000000;
+	padding: 0;
+	font-size: 20px;
 }
+
 /* Input boxes in the details section */
 
 #details input {
@@ -136,6 +158,7 @@ label {
 	border-radius: 5px;
 	font-family: montserrat;
 }
+
 /* Vehicle cards */
 
 .car {
@@ -147,17 +170,20 @@ label {
 	transition: 0.1s;
 	margin: 10px 10px 10px 0;
 }
+
 /* Vehicle card images */
 
 .car img {
 	width: 100%;
 }
+
 /* Vehicle card hover effects */
 
 .car:hover {
 	transform: scale(1.1);
 	border: 5px solid #585858;
 }
+
 /* Makes the radio inputs on my vehicle cards invisble */
 
 .invisible-radio {
@@ -167,16 +193,19 @@ label {
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
+
 /* Styles checked vehicle cards */
 
 .invisible-radio:checked+.car {
 	border: 5px solid #F25C05;
 }
+
 /* Styles unchecked vehicle cards */
 
 .invisible-radio:not(:checked)+label {
 	cursor: pointer;
 }
+
 /* Comment box */
 
 textarea {
@@ -185,29 +214,34 @@ textarea {
 	resize: none;
 	font-family: montserrat;
 }
+
 /* The details inputs on the left */
 
 #detailsLeft {
 	width: 50%;
 	display: inline-block;
 }
+
 /* The details inputs on the right */
 
 #detailsRight {
 	width: 49%;
 	float: right;
 }
+
 /* Button hover effect */
 
 button:hover {
 	cursor: pointer;
 }
+
 /* Buttons at the end to submit and reset container */
 
 .buttons {
 	display: flex;
 	justify-content: center;
 }
+
 /* Next button */
 
 .nextButtons {
@@ -220,12 +254,15 @@ button:hover {
 	color: #ffffff;
 	margin-left: 10px;
 }
+
 /* Next button and previous button hover effect */
 
-.nextButtons:hover, .previousButtons:hover {
+.nextButtons:hover,
+.previousButtons:hover {
 	transition: 0.2s;
 	opacity: 0.8;
 }
+
 /* Previous button */
 
 .previousButtons {
@@ -238,6 +275,7 @@ button:hover {
 	color: #ffffff;
 	margin-right: 10px;
 }
+
 /* Submit button */
 
 #submitButton {
@@ -249,10 +287,12 @@ button:hover {
 	font-size: 16px;
 	margin-left: 10px;
 }
+
 #submitButton:disabled {
 	background-color: #333333;
 	border: 2px solid #333333;
 }
+
 /* Reset button */
 
 #resetButton {
@@ -265,6 +305,7 @@ button:hover {
 	font-size: 16px;
 	margin-right: 10px;
 }
+
 /* The container */
 
 .container {
@@ -276,6 +317,7 @@ button:hover {
 	font-size: 18px;
 	user-select: none;
 }
+
 /* Hide the browser's default checkbox */
 
 .container input {
@@ -285,6 +327,7 @@ button:hover {
 	height: 0;
 	width: 0;
 }
+
 /* Create a custom checkbox */
 
 .checkmark {
@@ -296,16 +339,19 @@ button:hover {
 	background-color: #eee;
 	border: 1px solid #585858;
 }
+
 /* On mouse-over, add a grey background color */
 
 .container:hover input~.checkmark {
 	background-color: #cccccc;
 }
+
 /* When the checkbox is checked, add a blue background */
 
 .container input:checked~.checkmark {
 	background-color: #F25C05;
 }
+
 /* Create the checkmark/indicator (hidden when not checked) */
 
 .checkmark:after {
@@ -313,11 +359,13 @@ button:hover {
 	position: absolute;
 	display: none;
 }
+
 /* Show the checkmark when checked */
 
 .container input:checked~.checkmark:after {
 	display: block;
 }
+
 /* Style the checkmark/indicator */
 
 .container .checkmark:after {
@@ -331,6 +379,7 @@ button:hover {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
 /* Style the tab */
 
 .tab {
@@ -339,6 +388,7 @@ button:hover {
 	width: 100px;
 	height: 100%;
 }
+
 /* Style the buttons inside the tab */
 
 .tab button {
@@ -355,17 +405,20 @@ button:hover {
 	font-size: 17px;
 	font-family: montserrat;
 }
+
 /* Change background color of side navigation buttons on hover */
 
 .tab button:hover {
 	background-color: #ddd;
 }
+
 /* Create an active/current "tab button" class */
 
 .tab button.active {
 	background-color: #eee;
 	font-weight: bold;
 }
+
 /* Error message */
 
 .errorMessage {
@@ -373,31 +426,38 @@ button:hover {
 	margin: 0 0 0 10px;
 	font-size: 14px;
 }
+
 /* Media query for phones */
 
 @media only screen and (max-width: 450px) {
+
 	/* Centers all the content */
 	.main {
 		width: 95%;
 	}
+
 	/* Rickys rides in navbar */
 	.nav h1 {
 		width: 100%;
 		text-align: center;
 	}
+
 	/* Logo in navbar */
 	#navLogo {
 		display: none;
 	}
+
 	/* Vehicle headers */
 	h3 {
 		font-size: 1.4rem;
 	}
+
 	/* Vehicle costs */
 	label p {
 		font-size: 18px;
 		font-weight: bold;
 	}
+
 	/* Side output box */
 	#sideOutput {
 		float: none;
@@ -408,31 +468,37 @@ button:hover {
 		width: 89%;
 		margin: 20px auto 0 auto;
 	}
+
 	/* The details inputs on the left */
 	#detailsLeft {
 		width: 100%;
 		display: block;
 	}
+
 	/* The details inputs on the right */
 	#detailsRight {
 		width: 100%;
 		float: none;
 	}
+
 	/* Side navigation tab */
 	.tab {
 		display: none;
 	}
+
 	/* Vehicle cards */
 	.car {
 		width: 100%;
 		padding: 0;
 		margin: 20px 0 0 0;
 	}
+
 	/* Vehicle card hover effects */
 	.car:hover {
 		transform: scale(1);
 		border: 5px solid #585858;
 	}
+
 	/* The inputs in the details section */
 	#details input {
 		width: 93%;
@@ -440,47 +506,57 @@ button:hover {
 		border-radius: 5px;
 		font-family: montserrat;
 	}
+
 	/* The comment box */
 	textarea {
 		width: 100%;
 		height: 70px;
 	}
+
 	/* Footer */
 	footer {
 		position: relative;
 		padding: 0 0 10px 0;
 	}
+
 	/* Footer heading */
 	footer h2 {
 		margin: 20px 0 10px 0;
 	}
 }
+
 /* Media query for tablets */
 
 @media only screen and (max-width: 1000px) {
+
 	/* Centers everything wrapped in main div */
 	.main {
 		width: 95%;
 	}
+
 	/* Nav heading/Ricky's Rides */
 	.nav h1 {
 		font-size: 46px;
 		width: 100%;
 		text-align: center;
 	}
+
 	/* Logo in navbar */
 	#navLogo {
 		display: none;
 	}
+
 	/* Vehicle headings */
 	h3 {
 		font-size: 1.4rem;
 	}
+
 	/* Vehicle prices */
 	label p {
 		font-size: 18px;
 		font-weight: bold;
 	}
+
 	/* Output box on the side */
 	#sideOutput {
 		float: none;
@@ -491,10 +567,12 @@ button:hover {
 		width: 89%;
 		margin: 20px auto 0 auto;
 	}
+
 	/* Side navigation tab */
 	.tab {
 		display: none;
 	}
+
 	/* Vehicle cards */
 	.car {
 		width: 48%;
@@ -502,11 +580,13 @@ button:hover {
 		display: inline-block;
 		margin: 20px 0 0 0;
 	}
+
 	/* Vehicle card hover effects */
 	.car:hover {
 		transform: scale(1);
 		border: 5px solid #585858;
 	}
+
 	/* Input boxes on the details tab */
 	#details input {
 		width: 93%;
@@ -514,21 +594,25 @@ button:hover {
 		border-radius: 5px;
 		font-family: montserrat;
 	}
+
 	/* Comment box */
 	textarea {
 		width: 100%;
 		height: 70px;
 	}
+
 	/* Footer */
 	footer {
 		position: relative;
 		padding: 0 0 10px 0;
 	}
+
 	/* Footer heading */
 	footer h2 {
 		margin: 20px 0 10px 0;
 	}
 }
+
 /* Media query for ultrawide resolutions */
 
 @media only screen and (min-width: 2560px) {

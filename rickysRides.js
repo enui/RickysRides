@@ -38,6 +38,7 @@ function vehicleSelection(form) {
 	outputFuel.innerHTML = fuel;
 	outputTrans.innerHTML = trans;
 	details();
+	details();
 }
 // Function to calculate extras
 function extraSelection(form) {
@@ -110,12 +111,14 @@ function upload(form) {
 }
 // This function deals with validation of the form fields
 function validityChecker(form) {
+	pickUp = pickUpDate.value;
+	console.log(pickUp)
 	// Gets all elements with the class required
 	var test = document.getElementsByClassName('required');
 	for (i = 0; i < test.length; i++) {
 		test[i].validity == false;
 		// If the inputs are invalid runs this
-		if (test[i].checkValidity() == false || test[i].value.trim() == 0) {
+		if (test[i].checkValidity() == false || test[i].value.trim() == '') {
 			document.getElementById("submitButton").disabled = true;
 			document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
 			document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
@@ -135,7 +138,7 @@ function validityChecker(form) {
 			document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
 			document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
 			// If terms checkbox is ticked runs enables submit button
-			if (document.getElementById("terms").checked && test[i].checkValidity() == true) {
+			if (document.getElementById("terms").checked == true && test[i].checkValidity() == true && vehicle != null && pickUp != '') {
 				document.getElementById("submitButton").disabled = false;
 			}
 			// If terms checkbox is not ticked disables submit button
