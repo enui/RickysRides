@@ -184,8 +184,20 @@ textarea {
     width: 50%;
     height: 70px;
     resize: none;
+    font-family: montserrat;
 }
 
+#detailsLeft{
+    width: 50%;
+    display: inline-block;
+}
+
+#detailsRight{
+    width: 49%;
+    float: right;
+}
+
+/* Button hover effect */
 button:hover{
     cursor: pointer;
 }

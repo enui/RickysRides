@@ -1,4 +1,6 @@
 // Javascript
+
+// Runs date function that prevents users from entering past dates
 date();
 
 // Variables
@@ -62,6 +64,7 @@ function extraSelection(form){
             }
         }
     }
+    // Outputs to the HTML
     outputExtras.innerHTML = extras;
     outputExtrasSide.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
@@ -119,40 +122,7 @@ function validityChecker(form) {
     // Gets all elements with the class required
     var test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
-        if (test[i].checkValidity() == false || test[i].value.trim() == '') {
-            document.getElementById("submitButton").disabled = true;
-            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
-            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
-            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
-            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
-            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
-            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
-            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
-        }
-        else if (test[i].checkValidity() == true) {
-            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
-            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
-            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
-            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
-            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
-            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
-            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
-    
-            if (document.getElementById('terms').checked == true) {
-                document.getElementById("submitButton").disabled = false;
-            }
-            else if (document.getElementById('terms').checked == false) {
-                document.getElementById("submitButton").disabled = true;
-            }
-        }
-    }  
-}
-
-// This function deals with validation of the form fields
-function validityChecker(form) {
-    // Gets all elements with the class required
-    var test = document.getElementsByClassName('required');
-    for (i = 0; i < test.length; i++) {
+        // If the inputs are invalid runs this
         if (test[i].checkValidity() == false) {
             document.getElementById("submitButton").disabled = true;
             document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
@@ -162,7 +132,8 @@ function validityChecker(form) {
             document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
             document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
             document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
-        } 
+        }
+        // If inputs are valid runs this
         else if (test[i].checkValidity() == true) {
             document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
             document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
@@ -170,12 +141,12 @@ function validityChecker(form) {
             document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
             document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
             document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
-            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;\
-
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+            // If terms checkbox is ticked runs enables submit button
             if (document.getElementById("terms").checked == true) {
                 document.getElementById("submitButton").disable == false;
             }
-
+            // If terms checkbox is not ticked disables submit button
             else if (document.getElementById("terms").checked == false) {
                 document.getElementById("submitButton").disable == true;
             }
@@ -186,11 +157,12 @@ function validityChecker(form) {
 // Tab switching function
 function tabSwitch(evt, tabName) {
     var i, tabcontent, tablinks;
+    // Finds divs with class tabcontent
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    // 
+    // Finds the tablinks on the side
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -203,6 +175,7 @@ function tabSwitch(evt, tabName) {
 document.getElementById("defaultOpen").click();
 document.getElementById("submitButton").disabled = true;
 
+// Date function that sets the minimum date to today yo prevent users entering past dates
 function date(){
     let today = new Date(),
         day = today.getDate(),

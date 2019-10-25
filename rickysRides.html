@@ -178,69 +178,6 @@
         </div>
     </div>
 
-    <!-- The bulk of the site -->
-    <div class="main">
-        
-            <!-- Radios -->
-            <div class="card tabcontent" id="vehicleRadios">
-                <h2 id="vehicleHeading">Select a Vehicle:</h2>
-
-                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
-                <label class="car" for="tiida">
-                    <h3>Nissan Tiida</h3>
-                    <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
-                    <p>$18 per day</p>
-                </label>
-
-                <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
-                <label class="car" for="swift">
-                    <h3>Suzuki Swift</h3>
-                    <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
-                    <p>$18 per day</p>
-                </label>
-
-                <input class="invisible-radio" id="captiva" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
-                <label class="car" for="captiva">
-                    <h3>Holden Captiva</h3>
-                    <img src="images\holdenCaptiva.png" alt="Holden Captiva" title="Holden Captiva">
-                    <p>$52 per day</p>
-                </label>
-
-                <input class="invisible-radio" id="trax" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
-                <label class="car" for="trax">
-                    <h3>Holden Trax</h3>
-                    <img src="images\holdenTrax.png" alt="Holden Trax" title="Holden Trax">
-                    <p>$41 per day</p>
-                </label>
-
-                <input class="invisible-radio" id="mazda" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="23" data-seats="5" data-style="5 door hatch/wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
-                <label class="car" for="mazda">
-                    <h3>Mazda 3</h3>
-                    <img src="images\mazda3.png" alt="Mazda 3" title="Mazda 3">
-                    <p>$23 per day</p>
-                </label>
-
-                <input class="invisible-radio" id="caravan" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
-                <label class="car" for="caravan">
-                    <h3>Nissan Caravan</h3>
-                    <img src="images\nissanCaravan.png" alt="Nissan Caravan" title="Nissan Caravan">
-                    <p>$89 per day</p>
-                </label>
-                
-                <input class="invisible-radio" id="estima" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
-                <label class="car" for="estima">
-                    <h3>Toyota Estima</h3>
-                    <img src="images\toyotaEstima.png" alt="Toyota Estima" title="Toyota Estima">
-                    <p>$62 per day</p>
-                </label>
-
-                <br><br>
-
-                <div class="buttons">
-                    <button class="nextButtons" onclick="tabSwitch(event, 'options')">Next</button>
-                </div>
-            </div>
-
             <!-- Options -->
             <div class="card tabcontent" id="options">
                 <h2>Select any Options:</h2><br>
@@ -283,36 +220,35 @@
             <div class="card tabcontent" id="details">
                 <h2>Enter your Details:</h2><br>
                 
-                    <label>Pick up date: </label><div class="errorMessage" id="dateInvalid"></div><br>
+                <div id="detailsLeft">
+                    <label for="pickUpDate">Pick up date*: </label><div class="errorMessage" id="dateInvalid"></div><br>
                     <input class="required" id="pickUpDate" type="date" onblur="details()" ><br><br>
+                    
 
-                    <label>Number of days (Max 14):</label><div class="errorMessage" id="daysInvalid"></div><br>
-                    <input class="required" id="numberOfDays" type="number" onblur="details()" min="1" max="14" ><br><br>
+                    <label for="numberOfDays">Number of days (Max 14)*:</label><div class="errorMessage" id="daysInvalid"></div><br>
+                    <input class="required" id="numberOfDays" type="number" onblur="details()" placeholder="3" min="1" max="14" ><br><br>
                     
                     
-                    <label for="firstNameInput">First name: </label><div class="errorMessage" id="firstNameInvalid"></div><br>
+                    <label for="firstNameInput">First name*: </label><div class="errorMessage" id="firstNameInvalid"></div><br>
                     <input class="required" autocomplete="on" id="firstNameInput" onblur="details()" placeholder="John"  title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
                     
 
-                    <label>Last name: </label><div class="errorMessage" id="lastNameInvalid"></div><br>
+                    <label for="lastNameInput">Last name*: </label><div class="errorMessage" id="lastNameInvalid"></div><br>
                     <input class="required" autocomplete="on" id="lastNameInput"onblur="details()" placeholder="Smith"  title="Enter your last name" type="text" pattern="[A-Za-z ]{2,}"><br><br>
-                    
-                    
-                    <label>Cellphone: </label><div class="errorMessage" id="phoneNumberInvalid"></div><br>
+                </div>
+                
+                <div id="detailsRight">
+                    <label for="phoneNumberInput">Cellphone*: </label><div class="errorMessage" id="phoneNumberInvalid"></div><br>
                     <input class="required" autocomplete="on" id="phoneNumberInput" onblur="details()" placeholder="0225020050"  title="Enter your cellphone number" type="tel" pattern="[+0-9 ]{9,13}"><br><br>
                     
                     
-                    <label>Email address: </label><div class="errorMessage" id="emailInvalid"></div><br>
-                    <input class="required" autocomplete="on" id="emailInput" onblur="details()" placeholer="ethanw.17167@obhs.school.nz"  title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
+                    <label for="emailInput">Email address*: </label><div class="errorMessage" id="emailInvalid"></div><br>
+                    <input class="required" autocomplete="on" id="emailInput" onblur="details()" placeholder="john.smith@gmail.com"  title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
                     
                     
-                    <label>Age: </label><div class="errorMessage" id="ageInvalid"></div><br>
-                    <input class="required" autocomplete="on" id="ageInput" onblur="details()" placeholder="18"  title="Enter your age" type="number" min="18" max="100" pattern="[1-9]"><br><br>
-                    
-                    
-                    <!-- <label>Comments: </label><br>
-                    <textarea id="commentInput" placeholder="Please enter any comments"></textarea> -->
-                
+                    <label for="ageInput">Age*: </label><div class="errorMessage" id="ageInvalid"></div><br>
+                    <input class="required" autocomplete="on" id="ageInput" onblur="details()" placeholder="18"  title="Enter your age" type="number" min="18" max="100"><br><br>
+                </div>
                 <br><br>
 
                 <!-- Navigation buttons -->
@@ -327,73 +263,78 @@
                 <h2>Booking summary:</h2><br>
                 <table>
                         <tr>
-                                <td>Pick up date:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputDate"></div>
-                                </td>
-                            </tr>
+                            <td>Pick up date:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputDate"></div>
+                            </td>
+                        </tr>
                         <tr>
-                            
-                                <td>Selected vehicle:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputVehicle"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Car cost per day:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputPrice"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Insurance per day:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputInsurance"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Booking fee:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputBookingFee"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Number of days:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputDays"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Extras:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputExtras"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Extras total:</td>
-                                <td></td>
-                                <td>
-                                    <div id="outputExtrasTotal"></div>
-                                </td>
-                            </tr>
-                            <tr>
+                            <td>Selected vehicle:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputVehicle"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Car cost per day:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputPrice"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Insurance per day:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputInsurance"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Booking fee:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputBookingFee"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of days:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputDays"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Extras:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputExtras"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Extras total:</td>
+                            <td></td>
+                            <td>
+                                <div id="outputExtrasTotal"></div>
+                            </td>
+                        </tr>
+                        <tr>
                                 <td><br></td>
-                            </tr>
-                            <tr>
-                                <td><b>Total Cost:</b></td>
-                                <td></td>
-                                <td>
-                                    <div id="outputCost"></div>
-                                </td>
-                            </tr>
+                        </tr>
+                        <tr>
+                            <td><b>Total Cost:</b></td>
+                            <td></td>
+                            <td>
+                                <div id="outputCost"></div>
+                            </td>
+                        </tr>
                 </table>
+
+                <br><br>
+
+
+                <label>Comments: </label><br>
+                <textarea id="commentInput" placeholder="Please enter any comments about your order"></textarea>
 
                 <br><br>
 
@@ -402,18 +343,18 @@
                     <input onclick="validityChecker()" type="checkbox" id="terms" value="terms" required><label for="terms"> Accept terms and conditions</label>
                     <span class="checkmark"></span>
                 </label><br>
-
-                <!-- Navigation button -->
+                    
+                <!-- Navigation buttons -->
                 <div class="buttons">
-                    <button class="nextButtons" onclick="tabSwitch(event, 'details')">Previous</button>
+                    <button class="previousButtons" type="button" onclick="tabSwitch(event, 'details')">Previous</button>
                 </div>
 
                 <br><br>
-                    
+                
                 <!-- Submit and reset button -->
                 <div class="buttons">
                     <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
-                    <button id="submitButton" onclick="upload()" type="button">Submit</button>
+                    <button id="submitButton" onclick="upload()" type="button" disabled>Submit</button>
                 </div>
             </div>
 
@@ -424,7 +365,7 @@
                     Your booking has been confirmed. Expect an email soon.
                 </p>
             </div>
-    </form>
+        </form>
         <br><br>
     </div>
     <footer>
