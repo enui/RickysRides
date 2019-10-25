@@ -69,6 +69,7 @@ input:required:invalid{
     box-shadow: 5px 5px 5px 4px #afafaf;
     width: 350px;
     display: block;
+    top: 140px;
 }
 
 /* Footer */
@@ -207,6 +208,13 @@ button:hover{
     margin-left: 10px;
 }
 
+/* Next button and previous button hover effect */
+.nextButtons:hover,
+.previousButtons:hover {
+    transition: 0.2s;
+    opacity: 0.8;
+}
+
 /* Previous button */
 .previousButtons{
     background-color: #ff9100;
@@ -264,7 +272,7 @@ button:hover{
     }
 
     #sideOutput{
-        display: none;
+        float: none;
     }
 
     .tab{

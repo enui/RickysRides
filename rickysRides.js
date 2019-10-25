@@ -148,6 +148,41 @@ function validityChecker(form) {
     }  
 }
 
+// This function deals with validation of the form fields
+function validityChecker(form) {
+    // Gets all elements with the class required
+    var test = document.getElementsByClassName('required');
+    for (i = 0; i < test.length; i++) {
+        if (test[i].checkValidity() == false) {
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
+            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
+            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+        } 
+        else if (test[i].checkValidity() == true) {
+            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
+            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
+            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;\
+
+            if (document.getElementById("terms").checked == true) {
+                document.getElementById("submitButton").disable == false;
+            }
+
+            else if (document.getElementById("terms").checked == false) {
+                document.getElementById("submitButton").disable == true;
+            }
+        }   
+    }
+}
+
 // Tab switching function
 function tabSwitch(evt, tabName) {
     var i, tabcontent, tablinks;

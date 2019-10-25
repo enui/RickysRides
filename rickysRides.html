@@ -33,7 +33,72 @@
     </div>
     
     <form id="bookingForm" name="bookingForm">
-    <!-- Constant output -->
+
+    <!-- The bulk of the site -->
+    <div class="main">
+        
+            <!-- Vehicle selection -->
+            <div class="card tabcontent" id="vehicleRadios">
+                <!-- Vehicle selection heading -->
+                <h2 id="vehicleHeading">Select a Vehicle:</h2>
+
+                    <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
+                    <label class="car" for="tiida">
+                        <h3>Nissan Tiida</h3>
+                        <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
+                        <p>$18 per day</p>
+                    </label>
+
+                    <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                    <label class="car" for="swift">
+                        <h3>Suzuki Swift</h3>
+                        <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
+                        <p><b>$18 per day</b></p>
+                    </label>
+
+                <input class="invisible-radio" id="captiva" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
+                <label class="car" for="captiva">
+                    <h3>Holden Captiva</h3>
+                    <img src="images\holdenCaptiva.png" alt="Holden Captiva" title="Holden Captiva">
+                    <p>$52 per day</p>
+                </label>
+
+                <input class="invisible-radio" id="trax" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="41" data-seats="5" data-style="compact SUV" data-luggage="1 large, 2 small" data-engine="1.4 - 1.8 litre" data-economy="+/- 6.9 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Trax">
+                <label class="car" for="trax">
+                    <h3>Holden Trax</h3>
+                    <img src="images\holdenTrax.png" alt="Holden Trax" title="Holden Trax">
+                    <p>$41 per day</p>
+                </label>
+
+                <input class="invisible-radio" id="mazda" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="23" data-seats="5" data-style="5 door hatch/wagon" data-luggage="2 large, 1 small" data-engine="1.6 - 2 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Mazda 3">
+                <label class="car" for="mazda">
+                    <h3>Mazda 3</h3>
+                    <img src="images\mazda3.png" alt="Mazda 3" title="Mazda 3">
+                    <p>$23 per day</p>
+                </label>
+
+                <input class="invisible-radio" id="caravan" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="89" data-seats="10" data-style="Minivan" data-luggage="2 large, 4 small" data-engine="2 litre" data-economy="+/- 10 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Caravan">
+                <label class="car" for="caravan">
+                    <h3>Nissan Caravan</h3>
+                    <img src="images\nissanCaravan.png" alt="Nissan Caravan" title="Nissan Caravan">
+                    <p>$89 per day</p>
+                </label>
+                
+                <input class="invisible-radio" id="estima" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="62" data-seats="8" data-style="People mover" data-luggage="3 large, 2 small" data-engine="2.4 litre" data-economy="+/- 9.51 L / 100km" data-fuel="Petrol Unleaded 91" data-trans="Automatic" value="Toyota Estima">
+                <label class="car" for="estima">
+                    <h3>Toyota Estima</h3>
+                    <img src="images\toyotaEstima.png" alt="Toyota Estima" title="Toyota Estima">
+                    <p>$62 per day</p>
+                </label>
+
+                <br><br>
+
+                <div class="buttons">
+                    <button class="nextButtons" onclick="tabSwitch(event, 'options')">Next</button>
+                </div>
+            </div>
+
+            <!-- Constant output -->
     <div id="sideOutput" >
         <!-- Vehicle details section -->
         <div id="sideOutputDetails ">
@@ -250,8 +315,9 @@
                 
                 <br><br>
 
+                <!-- Navigation buttons -->
                 <div class="buttons">
-                    <button class="nextButtons" onclick="tabSwitch(event, 'options')">Previous</button>
+                    <button class="previousButtons" onclick="tabSwitch(event, 'options')">Previous</button>
                     <button class="nextButtons" onclick="tabSwitch(event, 'booking')">Next</button>
                 </div>
             </div>
