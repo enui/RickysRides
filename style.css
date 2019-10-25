@@ -187,11 +187,13 @@ textarea {
     font-family: montserrat;
 }
 
+/* The details inputs on the left */
 #detailsLeft{
     width: 50%;
     display: inline-block;
 }
 
+/* The details inputs on the right */
 #detailsRight{
     width: 49%;
     float: right;
@@ -285,6 +287,24 @@ button:hover{
 
     #sideOutput{
         float: none;
+        position: static;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 5px 5px 5px 4px #afafaf;
+        width: 300px;
+        margin: 20px 20px 0 0;
+    }
+
+    /* The details inputs on the left */
+    #detailsLeft{
+        width: 100%;
+        display: block;
+    }
+
+    /* The details inputs on the right */
+    #detailsRight{
+        width: 100%;
+        float: none;
     }
 
     .tab{
@@ -294,8 +314,13 @@ button:hover{
     .car{
         width: 100%;
         padding: 0;  
-        height: 300px;
         margin: 20px 0 0 0;
+    }
+
+        /* Vehicle card hover effects */
+    .car:hover{
+        transform: scale(1);
+        border: 5px solid #585858;
     }
 
     form{
@@ -429,4 +454,5 @@ button:hover{
 .errorMessage {
     display: inline-block;
     margin: 0 0 0 10px;
+    font-size: 14px;
 }

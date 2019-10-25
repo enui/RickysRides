@@ -69,6 +69,8 @@ function extraSelection(form){
     outputExtrasSide.innerHTML = extras;
     outputExtrasTotal.innerHTML = '$' + extrasTotal;
     outputExtrasTotalSide.innerHTML = '$' + extrasTotal;
+    
+    details();
 }
 
 // Details function
@@ -144,11 +146,11 @@ function validityChecker(form) {
             document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
             // If terms checkbox is ticked runs enables submit button
             if (document.getElementById("terms").checked == true) {
-                document.getElementById("submitButton").disable == false;
+                document.getElementById("submitButton").disabled = false;
             }
             // If terms checkbox is not ticked disables submit button
             else if (document.getElementById("terms").checked == false) {
-                document.getElementById("submitButton").disable == true;
+                document.getElementById("submitButton").disabled = true;
             }
         }   
     }

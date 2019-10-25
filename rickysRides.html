@@ -42,19 +42,19 @@
                 <!-- Vehicle selection heading -->
                 <h2 id="vehicleHeading">Select a Vehicle:</h2>
 
-                    <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
-                    <label class="car" for="tiida">
-                        <h3>Nissan Tiida</h3>
-                        <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
-                        <p>$18 per day</p>
-                    </label>
+                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
+                <label class="car" for="tiida">
+                    <h3>Nissan Tiida</h3>
+                    <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
+                    <p>$18 per day</p>
+                </label>
 
-                    <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
-                    <label class="car" for="swift">
-                        <h3>Suzuki Swift</h3>
-                        <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
-                        <p><b>$18 per day</b></p>
-                    </label>
+                <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <label class="car" for="swift">
+                    <h3>Suzuki Swift</h3>
+                    <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
+                    <p>$18 per day</p>
+                </label>
 
                 <input class="invisible-radio" id="captiva" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
                 <label class="car" for="captiva">
@@ -98,86 +98,6 @@
                 </div>
             </div>
 
-            <!-- Constant output -->
-    <div id="sideOutput" >
-        <!-- Vehicle details section -->
-        <div id="sideOutputDetails ">
-            <h2>Vehicle details: </h2>
-            <table>
-                <tr>
-                    <td>Vehicle:</td>
-                    <td></td>
-                    <td>
-                        <div id="sideOutputVehicle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Number of seats:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputSeats"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Body style:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputStyle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Luggage:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputLuggage"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Engine size:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputEngine"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fuel economy:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputEconomy"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fuel type:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputFuel"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Transmission:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputTrans"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Extras:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputExtrasSide"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Extras total:</td>
-                    <td></td>
-                    <td>
-                        <div id="outputExtrasTotalSide"></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
             <!-- Options -->
             <div class="card tabcontent" id="options">
                 <h2>Select any Options:</h2><br>
@@ -220,6 +140,7 @@
             <div class="card tabcontent" id="details">
                 <h2>Enter your Details:</h2><br>
                 
+                <!-- Left side details inputs -->
                 <div id="detailsLeft">
                     <label for="pickUpDate">Pick up date*: </label><div class="errorMessage" id="dateInvalid"></div><br>
                     <input class="required" id="pickUpDate" type="date" onblur="details()" ><br><br>
@@ -237,6 +158,7 @@
                     <input class="required" autocomplete="on" id="lastNameInput"onblur="details()" placeholder="Smith"  title="Enter your last name" type="text" pattern="[A-Za-z ]{2,}"><br><br>
                 </div>
                 
+                <!-- Right side details inputs -->
                 <div id="detailsRight">
                     <label for="phoneNumberInput">Cellphone*: </label><div class="errorMessage" id="phoneNumberInvalid"></div><br>
                     <input class="required" autocomplete="on" id="phoneNumberInput" onblur="details()" placeholder="0225020050"  title="Enter your cellphone number" type="tel" pattern="[+0-9 ]{9,13}"><br><br>
@@ -354,7 +276,7 @@
                 <!-- Submit and reset button -->
                 <div class="buttons">
                     <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
-                    <button id="submitButton" onclick="upload()" type="button" disabled>Submit</button>
+                    <button id="submitButton" onclick="upload()" type="button">Submit</button>
                 </div>
             </div>
 
@@ -365,9 +287,95 @@
                     Your booking has been confirmed. Expect an email soon.
                 </p>
             </div>
+
+            <!-- Side output -->
+            <div id="sideOutput" >
+                    <!-- Vehicle details section -->
+                    <div id="sideOutputDetails ">
+                        <h2>Vehicle details: </h2>
+                        <table>
+                            <tr>
+                                <td>Vehicle:</td>
+                                <td></td>
+                                <td>
+                                    <div id="sideOutputVehicle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Number of seats:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputSeats"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Body style:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputStyle"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Luggage:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputLuggage"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Engine size:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputEngine"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fuel economy:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputEconomy"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fuel type:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputFuel"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Transmission:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputTrans"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Extras:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputExtrasSide"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Extras total:</td>
+                                <td></td>
+                                <td>
+                                    <div id="outputExtrasTotalSide"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
         </form>
         <br><br>
+
+
     </div>
+
+    
     <footer>
         <div class="main">
             <h2>Contact details:</h2>
