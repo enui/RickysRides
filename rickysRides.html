@@ -120,19 +120,19 @@
             <div class="card tabcontent" id="vehicleRadios">
                 <h2 id="vehicleHeading">Select a Vehicle:</h2>
 
-                    <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
-                    <label class="car" for="tiida">
-                        <h3>Nissan Tiida</h3>
-                        <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
-                        <p>$18 per day</p>
-                    </label>
+                <input class="invisible-radio" id="tiida" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="4 door sedan or 5 door hatch" data-luggage="1 large, 2 small" data-engine="1.3 - 2 litre" data-economy="+/- 7 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Nissan Tiida" required>
+                <label class="car" for="tiida">
+                    <h3>Nissan Tiida</h3>
+                    <img src="images\nissanTiida.png" alt="Nissan Tiida" title="Nissan Tiida">
+                    <p>$18 per day</p>
+                </label>
 
-                    <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
-                    <label class="car" for="swift">
-                        <h3>Suzuki Swift</h3>
-                        <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
-                        <p><b>$18 per day</b></p>
-                    </label>
+                <input class="invisible-radio" id="swift" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="18" data-seats="5" data-style="5 door hatch" data-luggage="1 large, 1 small" data-engine="1.2 - 1.4 litre" data-economy="+/- 6 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Suzuki Swift">
+                <label class="car" for="swift">
+                    <h3>Suzuki Swift</h3>
+                    <img src="images\suzukiSwift.png" alt="Suzuki Swift" title="Suzuki Swift">
+                    <p>$18 per day</p>
+                </label>
 
                 <input class="invisible-radio" id="captiva" name="vehicle" type="radio" onclick="vehicleSelection(document.bookingForm)" data-price="52" data-seats="5" data-style="4 door SUV" data-luggage="3 large, 1 small" data-engine="3 litre" data-economy="+/- 9.2 L / 100km" data-fuel="Petrol" data-trans="Automatic" value="Holden Captiva">
                 <label class="car" for="captiva">
@@ -218,36 +218,35 @@
             <div class="card tabcontent" id="details">
                 <h2>Enter your Details:</h2><br>
                 
-                    <label>Pick up date: </label>
+                    <label>Pick up date: </label><div class="errorMessage" id="dateInvalid"></div><br>
                     <input class="required" id="pickUpDate" type="date" onblur="details()" ><br><br>
-                    <div class="errorMessage" id="dateInvalid"></div>
 
-                    <label>Number of days (Max 14):</label>
+                    <label>Number of days (Max 14):</label><div class="errorMessage" id="daysInvalid"></div><br>
                     <input class="required" id="numberOfDays" type="number" onblur="details()" min="1" max="14" ><br><br>
-                    <div class="errorMessage" id="daysInvalid"></div>
                     
-                    <label for="firstNameInput">First name: </label>
+                    
+                    <label for="firstNameInput">First name: </label><div class="errorMessage" id="firstNameInvalid"></div><br>
                     <input class="required" autocomplete="on" id="firstNameInput" onblur="details()" placeholder="John"  title="Enter your first name" type="text" pattern="[A-Za-z]{2,}"><br><br>
-                    <div class="errorMessage" id="firstNameInvalid"></div>
+                    
 
-                    <label>Last name: </label>
+                    <label>Last name: </label><div class="errorMessage" id="lastNameInvalid"></div><br>
                     <input class="required" autocomplete="on" id="lastNameInput"onblur="details()" placeholder="Smith"  title="Enter your last name" type="text" pattern="[A-Za-z ]{2,}"><br><br>
-                    <div class="errorMessage" id="lastNameInvalid"></div>
                     
-                    <label>Cellphone: </label>
+                    
+                    <label>Cellphone: </label><div class="errorMessage" id="phoneNumberInvalid"></div><br>
                     <input class="required" autocomplete="on" id="phoneNumberInput" onblur="details()" placeholder="0225020050"  title="Enter your cellphone number" type="tel" pattern="[+0-9 ]{9,13}"><br><br>
-                    <div class="e   rrorMessage" id="phoneNumberInvalid"></div>
                     
-                    <label>Email address: </label>
+                    
+                    <label>Email address: </label><div class="errorMessage" id="emailInvalid"></div><br>
                     <input class="required" autocomplete="on" id="emailInput" onblur="details()" placeholer="ethanw.17167@obhs.school.nz"  title="Enter your email address" pattern="[A-Za-z.0-9]{2,}@[A-Za-z.]{2,}"><br><br>
-                    <div class="errorMessage" id="emailInvalid"></div>
                     
-                    <label>Age: </label>
+                    
+                    <label>Age: </label><div class="errorMessage" id="ageInvalid"></div><br>
                     <input class="required" autocomplete="on" id="ageInput" onblur="details()" placeholder="18"  title="Enter your age" type="number" min="18" max="100" pattern="[1-9]"><br><br>
-                    <div class="errorMessage" id="ageInvalid"></div>
                     
-                    <label>Comments: </label><br>
-                    <textarea id="commentInput" placeholder="Please enter any comments"></textarea>
+                    
+                    <!-- <label>Comments: </label><br>
+                    <textarea id="commentInput" placeholder="Please enter any comments"></textarea> -->
                 
                 <br><br>
 
@@ -332,22 +331,24 @@
 
                 <br><br>
 
+                <!-- Terms and conditions checkbox -->
                 <label class="container">
-                        <input onclick="validityChecker()" type="checkbox" id="terms" value="terms" required><label for="terms"> Accept terms and conditions</label>
-                        <span class="checkmark"></span>
-                    </label><br>
-                    
-                    <div class="buttons">
-                        <button class="nextButtons" onclick="tabSwitch(event, 'details')">Previous</button>
-                    </div>
+                    <input onclick="validityChecker()" type="checkbox" id="terms" value="terms" required><label for="terms"> Accept terms and conditions</label>
+                    <span class="checkmark"></span>
+                </label><br>
 
-                    <br><br>
+                <!-- Navigation button -->
+                <div class="buttons">
+                    <button class="nextButtons" onclick="tabSwitch(event, 'details')">Previous</button>
+                </div>
+
+                <br><br>
                     
-                    <!-- Submit and reset button -->
-                    <div class="buttons">
-                        <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
-                        <button id="submitButton" onclick="upload()" type="button">Submit</button>
-                    </div>
+                <!-- Submit and reset button -->
+                <div class="buttons">
+                    <button id="resetButton" type="reset" onClick="window.location.reload();">Reset</button>
+                    <button id="submitButton" onclick="upload()" type="button">Submit</button>
+                </div>
             </div>
 
             <!-- Booking confirmation -->

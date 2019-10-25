@@ -116,25 +116,36 @@ function upload(form) {
 
 // This function deals with validation of the form fields
 function validityChecker(form) {
-    var test = false;
     // Gets all elements with the class required
-    test = document.getElementsByClassName('required');
+    var test = document.getElementsByClassName('required');
     for (i = 0; i < test.length; i++) {
-        if (test[i].checkValidity()) {
-            if (!test[i].checkValidity() || test[i].value.trim() == null || document.getElementById('terms').checked == false) {
-                document.getElementById("submitButton").disabled = true;
-                document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
-                document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
-                document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
-                document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
-                document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
-                document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
-                document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
-            } else {
-                document.getElementById("submitButton").disabled = false;
-            }   
+        if (test[i].checkValidity() == false || test[i].value.trim() == '') {
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
+            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
+            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
         }
-    }
+        else if (test[i].checkValidity() == true) {
+            document.getElementById("dateInvalid").innerHTML = document.getElementById("pickUpDate").validationMessage;
+            document.getElementById("daysInvalid").innerHTML = document.getElementById("numberOfDays").validationMessage;
+            document.getElementById("firstNameInvalid").innerHTML = document.getElementById("firstNameInput").validationMessage;
+            document.getElementById("lastNameInvalid").innerHTML = document.getElementById("lastNameInput").validationMessage;
+            document.getElementById("phoneNumberInvalid").innerHTML = document.getElementById("phoneNumberInput").validationMessage;
+            document.getElementById("emailInvalid").innerHTML = document.getElementById("emailInput").validationMessage;
+            document.getElementById("ageInvalid").innerHTML = document.getElementById("ageInput").validationMessage;
+    
+            if (document.getElementById('terms').checked == true) {
+                document.getElementById("submitButton").disabled = false;
+            }
+            else if (document.getElementById('terms').checked == false) {
+                document.getElementById("submitButton").disabled = true;
+            }
+        }
+    }  
 }
 
 // Tab switching function
