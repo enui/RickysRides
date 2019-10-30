@@ -84,7 +84,6 @@ function details(form) {
 }
 // Upload to firebase function
 function upload(form) {
-	console.log(totalCost);
 	var database = firebase.database();
 	var bookingRef = database.ref('bookings');
 	var firstName = firstNameInput.value;
@@ -94,6 +93,7 @@ function upload(form) {
 	var phoneNumber = phoneNumberInput.value;
 	var userAge = ageInput.value;
 	var comment = commentInput.value;
+	// JSON for the database entry
 	var bookingsEntry = {
 		name: fullName,
 		vehicle: vehicle,
@@ -150,25 +150,32 @@ function validityChecker(form) {
 }
 // Tab switching function
 function tabSwitch(evt, tabName) {
+	// Creates variables
 	var i, tabcontent, tablinks;
 	// Finds divs with class tabcontent
 	tabcontent = document.getElementsByClassName("tabcontent");
+	// Hides other tabs except the expected one and scrolls to top of page when tab switching
 	for (i = 0; i < tabcontent.length; i++) {
+		// Tabs other than selected set to display none
 		tabcontent[i].style.display = "none";
+		// Scrolls to top of document when switching tabs
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 	}
 	// Finds the tablinks on the side
 	tablinks = document.getElementsByClassName("tablinks");
+	// Replaces class with active
 	for (i = 0; i < tablinks.length; i++) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 	}
+	// Sets display to block instead of none
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 }
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+// Disables the submit button
 document.getElementById("submitButton").disabled = true;
-// Date function that sets the minimum date to today yo prevent users entering past dates
+// Date function that sets the minimum date to today to prevent users entering past dates
 function date() {
 	let today = new Date(),
 		day = today.getDate(),
@@ -180,6 +187,8 @@ function date() {
 	if (month < 10) {
 		month = '0' + month
 	}
+	// Makes date equal to today
 	today = year + '-' + month + '-' + day;
+	// Sets the minimum date to today to prevent users entering past dates
 	document.getElementById("pickUpDate").setAttribute("min", today);
 }
